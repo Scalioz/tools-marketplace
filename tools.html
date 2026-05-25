@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Tools — Scalioz Tools Marketplace</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f8f9fa;color:#333}
+header{background:#fff;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.logo img{height:65px;width:auto}
+nav{display:flex;align-items:center;gap:30px}
+nav a{color:#333;text-decoration:none;font-size:14px;font-weight:500}
+nav a:hover{color:#0A1860}
+.btn-getstarted{background:#1A3CFF;color:#fff!important;padding:10px 24px;border-radius:8px;font-weight:bold!important}
+.page-hero{background:#0A1860;color:#fff;padding:50px 40px;text-align:center}
+.page-hero h1{font-size:36px;font-weight:800;margin-bottom:10px}
+.page-hero p{font-size:16px;opacity:.8}
+.toolbar{background:#fff;padding:20px 40px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:80px;z-index:99}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{padding:8px 18px;border-radius:20px;border:2px solid #ddd;background:#fff;color:#555;cursor:pointer;font-size:13px;font-weight:600;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:#1A3CFF;color:#fff;border-color:#1A3CFF}
+.search-wrap{display:flex;align-items:center;gap:10px;background:#f5f5f5;padding:8px 16px;border-radius:20px}
+.search-wrap input{border:none;background:transparent;outline:none;font-size:14px;width:200px}
+.view-btns{display:flex;gap:5px}
+.view-btn{padding:7px 10px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer;font-size:14px}
+.view-btn.active{background:#1A3CFF;color:#fff;border-color:#1A3CFF}
+.content{padding:40px;max-width:1200px;margin:0 auto}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}
+.tool-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eee;transition:all .3s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.12);transform:translateY(-4px)}
+.card-img{height:160px;background:linear-gradient(135deg,#1A3CFF,#00C8FF);display:flex;align-items:center;justify-content:center;font-size:50px;position:relative}
+.card-img .rating{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:bold;color:#f59e0b}
+.card-body{padding:20px}
+.card-niche{display:inline-block;background:#e8f0ff;color:#1A3CFF;font-size:11px;font-weight:700;padding:3px 10px;border-radius:8px;margin-bottom:10px;text-transform:uppercase}
+.card-niche.healthcare{background:#e8fff0;color:#0a8a4a}
+.card-niche.realestate{background:#fff8e8;color:#b45309}
+.card-niche.construction{background:#ffeee8;color:#c2410c}
+.card-niche.education{background:#f0e8ff;color:#6d28d9}
+.card-body h3{font-size:16px;font-weight:700;color:#0A1860;margin-bottom:6px;line-height:1.3}
+.card-body p{font-size:13px;color:#666;line-height:1.5;margin-bottom:15px}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-price{font-size:14px;font-weight:700;color:#0A1860}
+.btn-view{background:#1A3CFF;color:#fff;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:none;cursor:pointer}
+.btn-view:hover{background:#0A1860}
+.coming-soon-card{opacity:.7}
+.coming-soon-card .card-img{background:linear-gradient(135deg,#94a3b8,#cbd5e1)}
+.coming-soon-badge{position:absolute;top:10px;left:10px;background:#f59e0b;color:#fff;font-size:11px;font-weight:bold;padding:3px 10px;border-radius:8px}
+.btn-coming{background:#cbd5e1;color:#64748b;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;border:none;cursor:default}
+.results-count{color:#666;font-size:14px;margin-bottom:20px}
+footer{background:#0d0f1a;color:#fff;padding:40px;text-align:center;margin-top:60px}
+footer img{height:45px;margin-bottom:12px}
+footer .tagline{color:#00C8FF;font-size:13px;margin-bottom:8px}
+footer p{color:#aaa;font-size:13px}
+footer a{color:#00C8FF;text-decoration:none}
+@media(max-width:768px){.toolbar{top:70px}.tools-grid{grid-template-columns:1fr}.search-wrap input{width:120px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="Scalioz"></a></div>
+  <nav>
+    <a href="tools.html">Tools</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="mailto:info@scalioz.com">Support</a>
+    <a href="https://www.scalioz.com">Custom</a>
+    <a href="#" class="btn-getstarted">Get Started</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <h1>All Tools</h1>
+  <p>35+ tools across 4 industries — built for Indian businesses</p>
+</div>
+
+<div class="toolbar">
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterTools('all')">All</button>
+    <button class="filter-btn" onclick="filterTools('healthcare')">🏥 Healthcare</button>
+    <button class="filter-btn" onclick="filterTools('realestate')">🏠 Real Estate</button>
+    <button class="filter-btn" onclick="filterTools('construction')">🏗️ Construction & PEB</button>
+    <button class="filter-btn" onclick="filterTools('education')">🎓 Education</button>
+  </div>
+  <div class="search-wrap">
+    <span>🔍</span>
+    <input type="text" placeholder="Search tools..." id="searchInput" onkeyup="searchTools()">
+  </div>
+</div>
+
+<div class="content">
+  <p class="results-count" id="resultsCount">Showing all 35 tools</p>
+  <div class="tools-grid" id="toolsGrid">
+
+    <!-- HEALTHCARE TOOLS -->
+    <a href="healthcare/revenue-leakage.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">🏥<span class="rating">⭐ 4.7 · 3 ratings</span></div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Clinic Revenue Leakage Calculator</h3>
+        <p>Find out exactly how much revenue your clinic is losing — beyond appointments.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/no-show-cost.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">📅</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Patient No-Show Cost Calculator</h3>
+        <p>Find the true cost of patient no-shows — beyond the obvious missed appointment.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/staff-productivity.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">👨‍⚕️</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Healthcare Staff Productivity Calculator</h3>
+        <p>Find out exactly how productive your clinic staff really are.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/marketing-roi.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">📊</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Clinic Marketing ROI Calculator</h3>
+        <p>Find out exactly which marketing channels are working for your clinic.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/treatment-cost.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">💊</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Treatment Cost Estimator</h3>
+        <p>Give patients instant transparent cost estimates before consultations.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/growth-dashboard.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">📈</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Clinic Growth Intelligence Dashboard</h3>
+        <p>Track every growth metric that matters for your clinic in one place.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/health-risk.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">❤️</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Health Risk Assessment Tool</h3>
+        <p>Help patients understand their health risks in 2 minutes.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/appointment-assistant.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">🤖</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>AI Appointment Assistant</h3>
+        <p>Let patients book, reschedule and get reminders automatically.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="healthcare/digital-token.html" class="tool-card" data-niche="healthcare">
+      <div class="card-img">🎫</div>
+      <div class="card-body">
+        <span class="card-niche healthcare">Healthcare</span>
+        <h3>Digital Token System</h3>
+        <p>Eliminate waiting room chaos — give patients a digital token and real-time updates.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <!-- REAL ESTATE TOOLS -->
+    <a href="realestate/affordability.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">🏠</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Property Affordability Calculator</h3>
+        <p>Help buyers understand exactly what property they can afford.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/rental-yield.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">💰</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Rental Yield Calculator</h3>
+        <p>Calculate gross and net rental yields to evaluate investment properties.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/roi-projection.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">📊</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Property ROI Projection Tool</h3>
+        <p>Project long-term returns on property investments with detailed modelling.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/loan-eligibility.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">🏦</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Home Loan Eligibility Estimator</h3>
+        <p>Estimate home loan eligibility based on income, age, and obligations.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/comparison.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">⚖️</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Property Comparison Dashboard</h3>
+        <p>Compare multiple properties side-by-side across key investment criteria.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/lead-tracker.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">📋</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Broker Lead Tracker</h3>
+        <p>Comprehensive lead management and follow-up tracker for real estate brokers.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/locality-intel.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">📍</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Locality Intelligence Tool</h3>
+        <p>Analyse locality potential, infrastructure, and investment attractiveness.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="realestate/buy-analyzer.html" class="tool-card" data-niche="realestate">
+      <div class="card-img">🔍</div>
+      <div class="card-body">
+        <span class="card-niche realestate">Real Estate</span>
+        <h3>Should I Buy This Property? Analyzer</h3>
+        <p>AI-powered property purchase decision tool for home buyers and investors.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <!-- CONSTRUCTION TOOLS -->
+    <a href="construction/peb-estimator.html" class="tool-card" data-niche="construction">
+      <div class="card-img">🏗️</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>PEB Budget Estimator</h3>
+        <p>Estimate pre-engineered building costs for factory and warehouse projects.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/warehouse-cost.html" class="tool-card" data-niche="construction">
+      <div class="card-img">🏭</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>Warehouse Cost Estimator</h3>
+        <p>Comprehensive warehouse construction cost estimation for developers.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/cold-storage-roi.html" class="tool-card" data-niche="construction">
+      <div class="card-img">❄️</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>Cold Storage ROI Calculator</h3>
+        <p>Calculate returns on cold storage facility investments with projections.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/timeline.html" class="tool-card" data-niche="construction">
+      <div class="card-img">📅</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>Construction Timeline Estimator</h3>
+        <p>Plan construction timelines based on project scope and resources.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/steel-weight.html" class="tool-card" data-niche="construction">
+      <div class="card-img">⚙️</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>Steel Weight Calculator</h3>
+        <p>Precise steel weight calculations for structural engineering and procurement.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/boq-generator.html" class="tool-card" data-niche="construction">
+      <div class="card-img">📝</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>BOQ Generator</h3>
+        <p>Automated Bill of Quantities generator for construction projects and tenders.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/roofing.html" class="tool-card" data-niche="construction">
+      <div class="card-img">🏠</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>Roofing Sheet Requirement Calculator</h3>
+        <p>Calculate exact roofing sheet quantities for any construction project.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <a href="construction/industrial-roi.html" class="tool-card" data-niche="construction">
+      <div class="card-img">💹</div>
+      <div class="card-body">
+        <span class="card-niche construction">Construction</span>
+        <h3>Industrial Project ROI Calculator</h3>
+        <p>Comprehensive ROI analysis for industrial construction projects.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <!-- EDUCATION TOOLS -->
+    <a href="education/course-eligibility.html" class="tool-card" data-niche="education">
+      <div class="card-img">🎓<span class="coming-soon-badge">NEW</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Course Eligibility Checker</h3>
+        <p>Help students find courses they are eligible for based on their academic profile.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-view">View Tool →</button></div>
+      </div>
+    </a>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">📚<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Scholarship Eligibility Tool</h3>
+        <p>Match students with scholarships based on academic and financial profile.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">📊<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Student Performance Dashboard</h3>
+        <p>Comprehensive student performance tracking for teachers and parents.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">📅<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Exam Preparation Planner</h3>
+        <p>AI-powered exam preparation schedule generator for students.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">🧭<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Career Recommendation Tool</h3>
+        <p>AI-driven career path recommendations based on student interests.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">🎯<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Marks Predictor</h3>
+        <p>Predict exam marks based on study patterns and past performance.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">🔀<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>AI Stream Selector</h3>
+        <p>AI-powered stream selection for Science, Commerce or Arts.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+    <div class="tool-card coming-soon-card" data-niche="education">
+      <div class="card-img">✅<span class="coming-soon-badge">Soon</span></div>
+      <div class="card-body">
+        <span class="card-niche education">Education</span>
+        <h3>Student Inquiry Qualification Tool</h3>
+        <p>Automatically qualify and prioritise student admission enquiries.</p>
+        <div class="card-footer"><span class="card-price">From ₹499/mo</span><button class="btn-coming">Coming Soon</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <img src="assets/logo.png" alt="Scalioz">
+  <div class="tagline">BUILD SYSTEMS. GROW FASTER.</div>
+  <p>© 2026 Scalioz — Seociate Digital Business Solutions</p>
+  <p style="margin-top:8px"><a href="mailto:info@scalioz.com">info@scalioz.com</a> | <a href="https://www.scalioz.com">www.scalioz.com</a></p>
+</footer>
+
+<script>
+function filterTools(niche) {
+  const cards = document.querySelectorAll('.tool-card');
+  const btns = document.querySelectorAll('.filter-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  let count = 0;
+  cards.forEach(card => {
+    if(niche === 'all' || card.dataset.niche === niche) {
+      card.style.display = 'block';
+      count++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.getElementById('resultsCount').textContent = `Showing ${count} tools`;
+}
+
+function searchTools() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.tool-card');
+  let count = 0;
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    if(text.includes(input)) {
+      card.style.display = 'block';
+      count++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.getElementById('resultsCount').textContent = `Showing ${count} tools`;
+}
+</script>
+
+</body>
+</html>
