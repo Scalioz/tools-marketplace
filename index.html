@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scalioz Tools — AI-Powered Business Tools Marketplace</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f8f9fa;color:#333}
+header{background:#0A1860;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:14px}
+nav a:hover{color:#FFD700}
+.hero{background:linear-gradient(135deg,#0A1860,#1A3CFF);color:#fff;text-align:center;padding:80px 40px}
+.hero h1{font-size:42px;margin-bottom:15px}
+.hero h1 span{color:#FFD700}
+.hero p{font-size:18px;opacity:.9;max-width:600px;margin:0 auto 30px}
+.search-box{display:flex;max-width:500px;margin:0 auto;background:#fff;border-radius:30px;overflow:hidden;padding:5px}
+.search-box input{flex:1;border:none;outline:none;padding:10px 20px;font-size:16px;color:#333}
+.search-box button{background:#FFD700;border:none;padding:10px 25px;border-radius:25px;font-weight:bold;cursor:pointer;color:#0A1860}
+.stats{display:flex;justify-content:center;gap:60px;padding:30px;background:#fff;border-bottom:2px solid #f0f0f0;flex-wrap:wrap}
+.stat{text-align:center}
+.stat h3{font-size:32px;font-weight:bold;color:#1A3CFF}
+.stat p{font-size:13px;color:#666}
+.section{padding:60px 40px;max-width:1200px;margin:0 auto}
+.categories{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:40px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}
+.tool-card{background:#fff;border-radius:15px;padding:25px;border:1px solid #e0e0e0;transition:all .3s;cursor:pointer;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#1A3CFF;box-shadow:0 8px 25px rgba(26,60,255,.15);transform:translateY(-3px)}
+.tool-card .niche{font-size:11px;font-weight:bold;color:#1A3CFF;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.tool-card h3{font-size:17px;color:#0A1860;margin-bottom:8px}
+.tool-card p{font-size:13px;color:#666;line-height:1.5;margin-bottom:15px}
+.tool-card .footer{display:flex;justify-content:space-between;align-items:center}
+.tool-card .price{font-size:14px;font-weight:bold;color:#0A1860}
+.tool-card .try-btn{background:#1A3CFF;color:#fff;border:none;padding:7px 18px;border-radius:15px;font-size:13px;cursor:pointer}
+.tool-card .try-btn:hover{background:#0A1860}
+.niche-section{margin-bottom:60px}
+.niche-header{display:flex;align-items:center;gap:15px;margin-bottom:25px;padding-bottom:15px;border-bottom:2px solid #f0f0f0}
+.niche-icon{font-size:30px;background:#f0f4ff;padding:12px;border-radius:12px}
+.niche-header h2{font-size:22px;color:#0A1860}
+.niche-header span{font-size:13px;color:#666;background:#f0f0f0;padding:4px 12px;border-radius:10px}
+.coming-soon{background:#f8f9ff;border:2px dashed #d0d8ff}
+.coming-soon .try-btn{background:#ccc;cursor:default}
+footer{background:#0A1860;color:#fff;padding:40px;text-align:center}
+footer p{opacity:.7;font-size:14px;margin-bottom:10px}
+footer a{color:#FFD700;text-decoration:none}
+.badge{display:inline-block;background:#e8f5e9;color:#2e7d32;font-size:10px;padding:2px 8px;border-radius:8px;font-weight:bold;margin-left:8px}
+.badge.new{background:#fff3e0;color:#e65100}
+@media(max-width:768px){.hero h1{font-size:28px}.tools-grid{grid-template-columns:1fr}.stats{gap:30px}}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" alt="Scalioz — Build Systems. Grow Faster." style="height:45px;width:auto;">
+  <nav>
+    <a href="#healthcare">Healthcare</a>
+    <a href="#realestate">Real Estate</a>
+    <a href="#construction">Construction</a>
+    <a href="#education">Education</a>
+    <a href="https://www.scalioz.com">Scalioz.com</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>AI-Powered <span>Business Tools</span><br>for Every Industry</h1>
+  <p>Smart calculators, dashboards, and automation tools designed to help Indian businesses make better decisions faster.</p>
+  <div class="search-box">
+    <input type="text" placeholder="Search tools..." id="searchInput" onkeyup="searchTools()">
+    <button>Search</button>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><h3>25+</h3><p>Tools Live</p></div>
+  <div class="stat"><h3>4</h3><p>Industries</p></div>
+  <div class="stat"><h3>1000+</h3><p>Businesses Served</p></div>
+  <div class="stat"><h3>₹499</h3><p>Per Month</p></div>
+</div>
+
+<div class="section">
+
+  <!-- HEALTHCARE -->
+  <div class="niche-section" id="healthcare">
+    <div class="niche-header">
+      <div class="niche-icon">🏥</div>
+      <div>
+        <h2>Healthcare Tools</h2>
+        <span>9 Tools Available</span>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <a href="healthcare/revenue-leakage.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Clinic Revenue Leakage Calculator</h3>
+        <p>Identify and plug revenue gaps in your clinic operations with our intelligent analysis tool.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/no-show-cost.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Patient No-Show Cost Calculator</h3>
+        <p>Calculate the true cost of missed appointments and strategies to reduce no-shows.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/staff-productivity.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Healthcare Staff Productivity Calculator</h3>
+        <p>Measure and optimise your healthcare team's productivity and efficiency metrics.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/marketing-roi.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Clinic Marketing ROI Calculator</h3>
+        <p>Track and maximise your marketing investment returns across all channels.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/treatment-cost.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Treatment Cost Estimator</h3>
+        <p>Provide accurate treatment cost estimates to patients before consultations.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/growth-dashboard.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Clinic Growth Intelligence Dashboard</h3>
+        <p>Comprehensive growth metrics dashboard for clinic owners and administrators.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/health-risk.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Health Risk Assessment Tool</h3>
+        <p>AI-powered health risk assessment for patients and preventive care planning.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/appointment-assistant.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>AI Appointment Assistant</h3>
+        <p>Intelligent appointment scheduling and management for busy clinic receptionists.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="healthcare/digital-token.html" class="tool-card">
+        <div class="niche">Healthcare</div>
+        <h3>Digital Token System</h3>
+        <p>Paperless digital token management system for clinics and hospitals.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- REAL ESTATE -->
+  <div class="niche-section" id="realestate">
+    <div class="niche-header">
+      <div class="niche-icon">🏠</div>
+      <div>
+        <h2>Real Estate Tools</h2>
+        <span>8 Tools Available</span>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <a href="realestate/affordability.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Property Affordability Calculator</h3>
+        <p>Help buyers understand exactly what property they can afford based on income and savings.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/rental-yield.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Rental Yield Calculator</h3>
+        <p>Calculate gross and net rental yields to evaluate investment property performance.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/roi-projection.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Property ROI Projection Tool</h3>
+        <p>Project long-term returns on property investments with detailed financial modelling.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/loan-eligibility.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Home Loan Eligibility Estimator</h3>
+        <p>Estimate home loan eligibility based on income, age, and existing obligations.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/comparison.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Property Comparison Dashboard</h3>
+        <p>Compare multiple properties side-by-side across key metrics and investment criteria.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/lead-tracker.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Broker Lead Tracker</h3>
+        <p>Comprehensive lead management and follow-up tracker for real estate brokers.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/locality-intel.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Locality Intelligence Tool</h3>
+        <p>Analyse locality potential, infrastructure, and investment attractiveness scores.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="realestate/buy-analyzer.html" class="tool-card">
+        <div class="niche">Real Estate</div>
+        <h3>Should I Buy This Property? Analyzer</h3>
+        <p>AI-powered property purchase decision tool for home buyers and investors.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CONSTRUCTION -->
+  <div class="niche-section" id="construction">
+    <div class="niche-header">
+      <div class="niche-icon">🏗️</div>
+      <div>
+        <h2>Construction & PEB Tools</h2>
+        <span>8 Tools Available</span>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <a href="construction/peb-estimator.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>PEB Budget Estimator</h3>
+        <p>Estimate pre-engineered building costs accurately for factory and warehouse projects.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/warehouse-cost.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>Warehouse Cost Estimator</h3>
+        <p>Comprehensive warehouse construction cost estimation for developers and investors.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/cold-storage-roi.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>Cold Storage ROI Calculator</h3>
+        <p>Calculate returns on cold storage facility investments with detailed projections.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/timeline.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>Construction Timeline Estimator</h3>
+        <p>Plan construction timelines based on project scope, resources, and milestones.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/steel-weight.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>Steel Weight Calculator</h3>
+        <p>Precise steel weight calculations for structural engineering and procurement.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/boq-generator.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>BOQ Generator</h3>
+        <p>Automated Bill of Quantities generator for construction projects and tenders.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/roofing.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>Roofing Sheet Requirement Calculator</h3>
+        <p>Calculate exact roofing sheet quantities needed for any construction project.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <a href="construction/industrial-roi.html" class="tool-card">
+        <div class="niche">Construction</div>
+        <h3>Industrial Project ROI Calculator</h3>
+        <p>Comprehensive ROI analysis for industrial construction and development projects.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="niche-section" id="education">
+    <div class="niche-header">
+      <div class="niche-icon">🎓</div>
+      <div>
+        <h2>Education Tools</h2>
+        <span class="badge new">NEW</span>
+        <span>10 Tools Coming Soon</span>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <a href="education/course-eligibility.html" class="tool-card">
+        <div class="niche">Education</div>
+        <h3>Course Eligibility Checker <span class="badge new">NEW</span></h3>
+        <p>Help students find courses they are eligible for based on their academic profile.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Try Now</button></div>
+      </a>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>Scholarship Eligibility Tool</h3>
+        <p>Match students with scholarships based on their academic and financial profile.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>Student Performance Dashboard</h3>
+        <p>Comprehensive student performance tracking for teachers and parents.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>Exam Preparation Planner</h3>
+        <p>AI-powered exam preparation schedule generator for students.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>Career Recommendation Tool</h3>
+        <p>AI-driven career path recommendations based on student interests and strengths.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>Marks Predictor</h3>
+        <p>Predict exam marks based on study patterns and past performance data.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>AI Stream Selector</h3>
+        <p>AI-powered stream selection tool for students choosing Science, Commerce or Arts.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+      <div class="tool-card coming-soon">
+        <div class="niche">Education</div>
+        <h3>Student Inquiry Qualification Tool</h3>
+        <p>Automatically qualify and prioritise student admission enquiries.</p>
+        <div class="footer"><span class="price">₹499/mo</span><button class="try-btn">Coming Soon</button></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <img src="assets/logo.png" alt="Scalioz" style="height:40px;width:auto;margin-bottom:15px;opacity:0.8">
+  <p>© 2026 Scalioz Systems | AI Automation & Digital Growth</p>
+  <p><a href="mailto:info@scalioz.com">info@scalioz.com</a> | <a href="https://www.scalioz.com">www.scalioz.com</a></p>
+  <p style="margin-top:15px;font-size:12px">Built with ❤️ in Chennai, India</p>
+</footer>
+
+<script>
+function searchTools() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.tool-card');
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
