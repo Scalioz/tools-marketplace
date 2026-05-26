@@ -340,7 +340,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
   </div>
 </footer>
 <script>
-const RAZORPAY_KEY='rzp_live_REPLACE_WITH_YOUR_KEY';
+const RAZORPAY_KEY='rzp_live_SsU1sQQQXDGPHX';
 function openRazorpay(plan,amt,desc){
   const o={key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,image:'../assets/logo.png',prefill:{name:'',email:'',contact:''},notes:{tool:'Student Performance Dashboard',plan:plan},theme:{color:'#1A3CFF'},handler:function(r){alert('✅ Payment successful!\nPayment ID: '+r.razorpay_payment_id+'\n\nYour license key will be sent via WhatsApp within 5 minutes.')}};
   new Razorpay(o).open();
