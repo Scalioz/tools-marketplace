@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Student Performance Dashboard — Scalioz Education Tools</title>
+<title>Student Performance Dashboard â€” Scalioz Education Tools</title>
 <meta name="description" content="Track student performance, subject-wise marks, grade trends and generate instant progress reports. Built for Indian schools and coaching centres."/>
 <link rel="icon" href="../assets/logo.png" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -33,7 +33,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .section-title{font-family:var(--font);font-size:18px;font-weight:700;color:var(--gray-800);margin-bottom:12px}
 .what-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
 .what-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray-600);line-height:1.5}
-.what-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.what-list li::before{content:'âœ“';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
 
 /* DEMO BOX */
 .demo-box{background:linear-gradient(135deg,#1A3CFF 0%,#0A1860 100%);border-radius:16px;overflow:hidden;margin-bottom:28px}
@@ -116,7 +116,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .price-gst{font-size:12px;color:var(--gray-400);margin-top:3px;margin-bottom:10px}
 .price-features{list-style:none;margin-bottom:12px}
 .price-features li{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600);padding:2px 0}
-.price-features li::before{content:'•';color:var(--blue);font-weight:700}
+.price-features li::before{content:'â€¢';color:var(--blue);font-weight:700}
 .btn-subscribe{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:11px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;width:100%;transition:all .2s}
 .btn-subscribe:hover{background:var(--navy);transform:translateY(-1px)}
 .btn-subscribe.dark{background:var(--navy)}.btn-subscribe.dark:hover{background:#060f3d}
@@ -185,16 +185,16 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../tools.html#education">Education</a> / <span>Student Performance Dashboard</span></div>
 <div class="page-wrap">
   <div class="content">
-    <div class="tool-badge">📊 Education</div>
+    <div class="tool-badge">ðŸ“Š Education</div>
     <h1 class="tool-title">Student Performance Dashboard</h1>
-    <p class="tool-subtitle">Track every student's subject-wise marks, calculate grades instantly and generate visual performance reports — for schools, coaching centres and private tutors.</p>
+    <p class="tool-subtitle">Track every student's subject-wise marks, calculate grades instantly and generate visual performance reports â€” for schools, coaching centres and private tutors.</p>
     <h2 class="section-title">What this tool does</h2>
     <ul class="what-list">
       <li>Enters marks for up to 8 subjects and instantly calculates percentage, grade and rank</li>
       <li>Generates a visual bar chart showing subject-wise performance at a glance</li>
       <li>Identifies strongest and weakest subjects automatically for focused counselling</li>
       <li>Supports CBSE, ICSE and State Board grading systems</li>
-      <li>Tracks performance across multiple exams — Unit Test, Mid-Term, Final and more</li>
+      <li>Tracks performance across multiple exams â€” Unit Test, Mid-Term, Final and more</li>
       <li>Exportable PDF progress reports to share with parents and management</li>
     </ul>
     <div class="demo-box">
@@ -243,7 +243,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
           <thead><tr><th>Subject</th><th>Marks Obtained</th><th>Max Marks</th><th>Grade</th></tr></thead>
           <tbody id="marksBody"></tbody>
         </table>
-        <button class="demo-btn" onclick="calcPerformance()" id="demoBtn">📊 Generate Performance Report</button>
+        <button class="demo-btn" onclick="calcPerformance()" id="demoBtn">ðŸ“Š Generate Performance Report</button>
         <div class="demo-results" id="demoResults">
           <div class="score-card">
             <div class="score-card-top">
@@ -258,35 +258,35 @@ footer{background:var(--navy);padding:48px 24px 24px}
             </div>
           </div>
           <div class="demo-limit-note">
-            <p>🔒 Full version: multi-student tracker, parent report PDF, exam comparison charts, class rank and more.</p>
-            <button class="demo-unlock-btn" onclick="document.querySelector('.pricing-card').scrollIntoView({behavior:'smooth'})">Unlock Full Access →</button>
+            <p>ðŸ”’ Full version: multi-student tracker, parent report PDF, exam comparison charts, class rank and more.</p>
+            <button class="demo-unlock-btn" onclick="document.querySelector('.pricing-card').scrollIntoView({behavior:'smooth'})">Unlock Full Access â†’</button>
           </div>
         </div>
       </div>
     </div>
     <h2 class="section-title">Frequently Asked Questions</h2>
     <div class="faq-section">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">⌄</span></div><div class="faq-a">You receive a license key via WhatsApp immediately after payment. Enter it on the tool page to unlock full access including multi-student tracking, PDF export and parent reports.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which grading systems are supported? <span class="faq-arrow">⌄</span></div><div class="faq-a">We support CBSE (A1–E grading), ICSE (percentage-based), Tamil Nadu State Board, Maharashtra Board and Karnataka Board grading scales. Custom grading is available on the lifetime plan.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I track multiple students? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. The full version supports unlimited students per class, with a class-wise dashboard showing ranks, toppers and students needing attention. Bulk CSV import is available on yearly and lifetime plans.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I share reports with parents? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. The full version generates a branded PDF progress report that you can share via WhatsApp, email or print. Reports include marks, grades, bar charts and teacher comments.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">⌄</span></div><div class="faq-a">7-day refund on monthly plans. Yearly and lifetime plans are non-refundable after 7 days. Contact support@scalioz.com for assistance.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I compare performance across multiple exams? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. The full version tracks Unit Test 1, Unit Test 2, Mid-Term, Quarterly and Final exam results in a single timeline chart showing improvement or decline per subject over the year.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">You receive a license key via WhatsApp immediately after payment. Enter it on the tool page to unlock full access including multi-student tracking, PDF export and parent reports.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which grading systems are supported? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">We support CBSE (A1â€“E grading), ICSE (percentage-based), Tamil Nadu State Board, Maharashtra Board and Karnataka Board grading scales. Custom grading is available on the lifetime plan.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I track multiple students? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. The full version supports unlimited students per class, with a class-wise dashboard showing ranks, toppers and students needing attention. Bulk CSV import is available on yearly and lifetime plans.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I share reports with parents? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. The full version generates a branded PDF progress report that you can share via WhatsApp, email or print. Reports include marks, grades, bar charts and teacher comments.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">7-day refund on monthly plans. Yearly and lifetime plans are non-refundable after 7 days. Contact support@scalioz.com for assistance.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I compare performance across multiple exams? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. The full version tracks Unit Test 1, Unit Test 2, Mid-Term, Quarterly and Final exam results in a single timeline chart showing improvement or decline per subject over the year.</div></div>
     </div>
     <div class="rate-section">
       <h3>Rate this tool</h3>
       <p>Only verified license holders can leave a review</p>
       <div class="rate-form-group"><label class="rate-label">License Key</label><input class="rate-input" type="text" placeholder="Enter your license key to verify purchase"/></div>
-      <div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">★</span><span class="star" onclick="setRating(2)">★</span><span class="star" onclick="setRating(3)">★</span><span class="star" onclick="setRating(4)">★</span><span class="star" onclick="setRating(5)">★</span></div></div>
+      <div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">â˜…</span><span class="star" onclick="setRating(2)">â˜…</span><span class="star" onclick="setRating(3)">â˜…</span><span class="star" onclick="setRating(4)">â˜…</span><span class="star" onclick="setRating(5)">â˜…</span></div></div>
       <div class="rate-form-group"><label class="rate-label">Your Name (optional)</label><input class="rate-input" type="text" placeholder="Anonymous"/></div>
       <div class="rate-form-group"><label class="rate-label">Your Review (optional)</label><textarea class="rate-textarea" rows="4" maxlength="500" placeholder="How has this tool helped your institution?" oninput="document.getElementById('cc').textContent=this.value.length+'/500'"></textarea><div class="char-count" id="cc">0/500</div></div>
       <button class="btn-review">Submit Review</button>
     </div>
     <div class="reviews-section"><h3>Customer Reviews</h3><div class="no-reviews">No reviews yet. Be the first to rate this tool after purchase.</div></div>
     <div class="custom-cta">
-      <h3>🔧 Need a custom version of this tool?</h3>
+      <h3>ðŸ”§ Need a custom version of this tool?</h3>
       <p>We can brand it, modify it, or build something completely new for your institution.</p>
-      <a href="../index.html#contact" class="btn-custom">See Custom Options →</a>
+      <a href="../index.html#contact" class="btn-custom">See Custom Options â†’</a>
     </div>
   </div>
   <div class="sidebar">
@@ -294,30 +294,30 @@ footer{background:var(--navy);padding:48px 24px 24px}
       <div class="pricing-card-header"><h3>Get Access to Student Performance Dashboard</h3><p>Choose the plan that fits your institution</p></div>
       <div class="price-row" style="margin-top:16px;">
         <div class="price-row-top"><span class="price-plan-name">Monthly</span></div>
-        <div class="price-amount"><sup>₹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div>
+        <div class="price-amount"><sup>â‚¹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div>
         <div class="price-gst">+ 18% GST</div>
         <ul class="price-features"><li>Cancel anytime</li><li>Bug fixes, 48hr WhatsApp support</li></ul>
-        <button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan — Student Performance Dashboard')">Subscribe Monthly</button>
+        <button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan â€” Student Performance Dashboard')">Subscribe Monthly</button>
       </div>
       <div class="price-row popular">
         <div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div>
-        <div class="price-amount"><sup>₹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div>
+        <div class="price-amount"><sup>â‚¹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div>
         <div class="price-gst">+ 18% GST</div>
         <ul class="price-features"><li>1 upgrade/quarter included</li><li>24hr support, email + WhatsApp</li></ul>
-        <button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan — Student Performance Dashboard')">Subscribe Yearly</button>
+        <button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan â€” Student Performance Dashboard')">Subscribe Yearly</button>
       </div>
       <div class="price-row">
         <div class="price-row-top"><span class="price-plan-name">Lifetime</span></div>
-        <div class="price-amount"><sup>₹</sup>9,999</div>
-        <div class="price-gst">+ GST = ₹11,799 total</div>
+        <div class="price-amount"><sup>â‚¹</sup>9,999</div>
+        <div class="price-gst">+ GST = â‚¹11,799 total</div>
         <ul class="price-features"><li>Pay once, use forever</li><li>2 upgrades/year, 12hr support, call access</li></ul>
-        <button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan — Student Performance Dashboard')">Buy Lifetime</button>
+        <button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan â€” Student Performance Dashboard')">Buy Lifetime</button>
       </div>
       <div class="trust-badges">
-        <div class="trust-item">🔒 Secure payment via Razorpay</div>
-        <div class="trust-item">🧾 GST Invoice auto-generated</div>
-        <div class="trust-item">🕐 7-day refund on monthly plans</div>
-        <div class="trust-item green">⚡ Instant access after payment</div>
+        <div class="trust-item">ðŸ”’ Secure payment via Razorpay</div>
+        <div class="trust-item">ðŸ§¾ GST Invoice auto-generated</div>
+        <div class="trust-item">ðŸ• 7-day refund on monthly plans</div>
+        <div class="trust-item green">âš¡ Instant access after payment</div>
       </div>
     </div>
   </div>
@@ -328,21 +328,21 @@ footer{background:var(--navy);padding:48px 24px 24px}
       <div class="footer-brand">
         <div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/><span class="f-logo-text">SC<span style="color:var(--cyan)">AI</span>LOZ</span></div>
         <div class="f-tagline">Build Systems. Grow Faster.</div>
-        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6">© 2026 Scalioz — Scalioz Digital Business Solutions</p>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6">Â© 2026 Scalioz â€” Scalioz Digital Business Solutions</p>
       </div>
       <div class="footer-col"><h4>Quick Links</h4><a href="../tools.html">Tools</a><a href="../index.html#pricing">Pricing</a><a href="../index.html#support">Support</a></div>
       <div class="footer-col"><h4>Legal</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a><a href="#">Cookie Policy</a></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Scalioz. All tools and content are proprietary to Scalioz Digital Business Solutions.</p>
-      <p>A Scalioz Digital Business Solutions Company — All Rights Reserved 2026</p>
+      <p>Â© 2026 Scalioz. All tools and content are proprietary to Scalioz Digital Business Solutions.</p>
+      <p>A Scalioz Digital Business Solutions Company â€” All Rights Reserved 2026</p>
     </div>
   </div>
 </footer>
 <script>
 const RAZORPAY_KEY='rzp_live_SsU1sQQQXDGPHX';
 function openRazorpay(plan,amt,desc){
-  const o={key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,image:'../assets/logo.png',prefill:{name:'',email:'',contact:''},notes:{tool:'Student Performance Dashboard',plan:plan},theme:{color:'#1A3CFF'},handler:function(r){alert('✅ Payment successful!\nPayment ID: '+r.razorpay_payment_id+'\n\nYour license key will be sent via WhatsApp within 5 minutes.')}};
+  const o={key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,image:'../assets/logo.png',prefill:{name:'',email:'',contact:''},notes:{tool:'Student Performance Dashboard',plan:plan},theme:{color:'#1A3CFF'},handler:function(r){alert('âœ… Payment successful!\nPayment ID: '+r.razorpay_payment_id+'\n\nYour license key will be sent via WhatsApp within 5 minutes.')}};
   new Razorpay(o).open();
 }
 
@@ -359,7 +359,7 @@ const subjects=[
   const tbody=document.getElementById('marksBody');
   subjects.forEach(s=>{
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${s.name}</td><td><input type="number" id="m_${s.key}" min="0" max="100" placeholder="0" style="width:70px;padding:5px 8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:5px;color:white;font-size:13px;font-family:inherit;outline:none;text-align:center"/></td><td><input type="number" id="max_${s.key}" value="100" min="1" max="200" style="width:70px;padding:5px 8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:5px;color:white;font-size:13px;font-family:inherit;outline:none;text-align:center"/></td><td class="grade-cell" id="g_${s.key}" style="color:rgba(255,255,255,.4)">—</td>`;
+    tr.innerHTML=`<td>${s.name}</td><td><input type="number" id="m_${s.key}" min="0" max="100" placeholder="0" style="width:70px;padding:5px 8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:5px;color:white;font-size:13px;font-family:inherit;outline:none;text-align:center"/></td><td><input type="number" id="max_${s.key}" value="100" min="1" max="200" style="width:70px;padding:5px 8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:5px;color:white;font-size:13px;font-family:inherit;outline:none;text-align:center"/></td><td class="grade-cell" id="g_${s.key}" style="color:rgba(255,255,255,.4)">â€”</td>`;
     tbody.appendChild(tr);
   });
 })();
@@ -407,15 +407,15 @@ function calcPerformance(){
   if(!valid)return alert('Please enter valid marks for all subjects (between 0 and max marks).');
 
   const btn=document.getElementById('demoBtn');
-  btn.innerHTML='<span class="spinner"></span> Generating…';btn.disabled=true;
+  btn.innerHTML='<span class="spinner"></span> Generatingâ€¦';btn.disabled=true;
   setTimeout(()=>{
-    btn.innerHTML='📊 Generate Performance Report';btn.disabled=false;
+    btn.innerHTML='ðŸ“Š Generate Performance Report';btn.disabled=false;
 
     const overallPct=Math.round((totalObt/totalMax)*100);
     const overallGrade=getGrade(overallPct);
 
     document.getElementById('resName').textContent=name;
-    document.getElementById('resClass').textContent=cls+' · '+board+' · '+exam;
+    document.getElementById('resClass').textContent=cls+' Â· '+board+' Â· '+exam;
 
     const gc=document.getElementById('gradeCircle');
     gc.style.borderColor=overallGrade.c;
@@ -446,7 +446,8 @@ function toggleFaq(el){el.parentElement.classList.toggle('open')}
 let rating=0;
 function setRating(n){rating=n;document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('active',i<n))}
 </script>
-</body>
+<script src="../chatbot.js"></script></body>
 </html>
+
 
 

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fee Reminder Automation — Scalioz Education Tools</title>
+<title>Fee Reminder Automation â€” Scalioz Education Tools</title>
 <link rel="icon" href="../assets/logo.png" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -29,7 +29,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .section-title{font-family:var(--font);font-size:18px;font-weight:700;color:var(--gray-800);margin-bottom:12px}
 .what-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
 .what-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray-600);line-height:1.5}
-.what-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.what-list li::before{content:'âœ“';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
 .demo-box{background:linear-gradient(135deg,#1A3CFF 0%,#0A1860 100%);border-radius:16px;overflow:hidden;margin-bottom:28px}
 .demo-header{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12)}
 .demo-header h3{font-family:var(--font);font-size:16px;font-weight:700;color:var(--white)}
@@ -79,7 +79,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .price-gst{font-size:12px;color:var(--gray-400);margin-top:3px;margin-bottom:10px}
 .price-features{list-style:none;margin-bottom:12px}
 .price-features li{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600);padding:2px 0}
-.price-features li::before{content:'•';color:var(--blue);font-weight:700}
+.price-features li::before{content:'â€¢';color:var(--blue);font-weight:700}
 .btn-subscribe{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:11px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;width:100%;transition:all .2s}
 .btn-subscribe:hover{background:var(--navy);transform:translateY(-1px)}
 .btn-subscribe.dark{background:var(--navy)}.btn-subscribe.dark:hover{background:#060f3d}
@@ -135,13 +135,13 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../tools.html#education">Education</a> / <span>Fee Reminder Automation</span></div>
 <div class="page-wrap">
 <div class="content">
-<div class="tool-badge">💰 Education</div>
+<div class="tool-badge">ðŸ’° Education</div>
 <h1 class="tool-title">Fee Reminder Automation</h1>
-<p class="tool-subtitle">Automatically generate personalised WhatsApp, SMS and email fee reminders for students — reduce pending fees and save hours of manual follow-up every month.</p>
+<p class="tool-subtitle">Automatically generate personalised WhatsApp, SMS and email fee reminders for students â€” reduce pending fees and save hours of manual follow-up every month.</p>
 <h2 class="section-title">What this tool does</h2>
 <ul class="what-list">
 <li>Generates personalised fee reminder messages for WhatsApp, SMS and Email in seconds</li>
-<li>Supports multiple reminder stages — 7 days before, due date, 3 days overdue, 7 days overdue</li>
+<li>Supports multiple reminder stages â€” 7 days before, due date, 3 days overdue, 7 days overdue</li>
 <li>Calculates late fee penalties automatically based on your institution's policy</li>
 <li>Creates batch reminders for entire classes or specific student groups</li>
 <li>Tracks which students have received reminders and their payment status</li>
@@ -149,14 +149,14 @@ footer{background:var(--navy);padding:48px 24px 24px}
 </ul>
 <div class="demo-box">
 <div class="demo-header">
-<div><h3>Live Demo Preview</h3><p>Generate a fee reminder message instantly — free preview</p></div>
+<div><h3>Live Demo Preview</h3><p>Generate a fee reminder message instantly â€” free preview</p></div>
 <span class="demo-free-badge">FREE PREVIEW</span>
 </div>
 <div class="demo-inner">
 <div class="demo-grid">
 <div class="demo-group"><label class="demo-label">Student Name</label><input class="demo-input" type="text" id="dName" placeholder="E.g. Rahul Sharma"/></div>
 <div class="demo-group"><label class="demo-label">Class</label><input class="demo-input" type="text" id="dClass" placeholder="E.g. Class 10-A"/></div>
-<div class="demo-group"><label class="demo-label">Fee Amount (₹)</label><input class="demo-input" type="number" id="dAmount" placeholder="E.g. 15000"/></div>
+<div class="demo-group"><label class="demo-label">Fee Amount (â‚¹)</label><input class="demo-input" type="number" id="dAmount" placeholder="E.g. 15000"/></div>
 <div class="demo-group"><label class="demo-label">Due Date</label><input class="demo-input" type="date" id="dDate"/></div>
 <div class="demo-group"><label class="demo-label">Reminder Type</label>
 <select class="demo-select" id="dType">
@@ -171,7 +171,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <option value="sms">SMS</option>
 <option value="email">Email</option>
 </select></div>
-<div class="demo-group full"><button class="demo-btn" onclick="generateReminder()" id="demoBtn">💬 Generate Reminder Message</button></div>
+<div class="demo-group full"><button class="demo-btn" onclick="generateReminder()" id="demoBtn">ðŸ’¬ Generate Reminder Message</button></div>
 </div>
 <div class="reminder-preview" id="reminderPreview">
 <div class="reminder-card" id="reminderCard">
@@ -184,52 +184,52 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <div class="stat-box"><div class="stat-num" id="statTotal"></div><div class="stat-label">Total Due</div></div>
 </div>
 <div class="demo-limit-note">
-<p>🔒 Full version: bulk reminders, auto-scheduling, payment tracking, multi-language support.</p>
-<button class="demo-unlock-btn" onclick="document.querySelector('.pricing-card').scrollIntoView({behavior:'smooth'})">Unlock Full Access →</button>
+<p>ðŸ”’ Full version: bulk reminders, auto-scheduling, payment tracking, multi-language support.</p>
+<button class="demo-unlock-btn" onclick="document.querySelector('.pricing-card').scrollIntoView({behavior:'smooth'})">Unlock Full Access â†’</button>
 </div>
 </div>
 </div>
 </div>
 <h2 class="section-title">Frequently Asked Questions</h2>
 <div class="faq-section">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">⌄</span></div><div class="faq-a">You receive a license key via WhatsApp immediately after payment. Enter it to unlock bulk reminders, auto-scheduling and payment tracking.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which channels does it support? <span class="faq-arrow">⌄</span></div><div class="faq-a">WhatsApp, SMS and Email. The full version also supports WhatsApp Business API integration for automated sending directly from the dashboard.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I send reminders in Tamil or Hindi? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. The full version supports English, Tamil, Hindi, Telugu, Kannada and Malayalam reminder templates. Custom language templates available on lifetime plan.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many students can I send reminders to at once? <span class="faq-arrow">⌄</span></div><div class="faq-a">Monthly plan supports up to 200 students/month. Yearly supports 1,000/month. Lifetime is unlimited. Bulk CSV upload available on yearly and lifetime plans.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">⌄</span></div><div class="faq-a">7-day refund on monthly plans. Contact support@scalioz.com for assistance.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">You receive a license key via WhatsApp immediately after payment. Enter it to unlock bulk reminders, auto-scheduling and payment tracking.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which channels does it support? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">WhatsApp, SMS and Email. The full version also supports WhatsApp Business API integration for automated sending directly from the dashboard.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I send reminders in Tamil or Hindi? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. The full version supports English, Tamil, Hindi, Telugu, Kannada and Malayalam reminder templates. Custom language templates available on lifetime plan.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many students can I send reminders to at once? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Monthly plan supports up to 200 students/month. Yearly supports 1,000/month. Lifetime is unlimited. Bulk CSV upload available on yearly and lifetime plans.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">7-day refund on monthly plans. Contact support@scalioz.com for assistance.</div></div>
 </div>
 <div class="rate-section">
 <h3>Rate this tool</h3><p>Only verified license holders can leave a review</p>
 <div class="rate-form-group"><label class="rate-label">License Key</label><input class="rate-input" type="text" placeholder="Enter your license key"/></div>
-<div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">★</span><span class="star" onclick="setRating(2)">★</span><span class="star" onclick="setRating(3)">★</span><span class="star" onclick="setRating(4)">★</span><span class="star" onclick="setRating(5)">★</span></div></div>
+<div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">â˜…</span><span class="star" onclick="setRating(2)">â˜…</span><span class="star" onclick="setRating(3)">â˜…</span><span class="star" onclick="setRating(4)">â˜…</span><span class="star" onclick="setRating(5)">â˜…</span></div></div>
 <div class="rate-form-group"><label class="rate-label">Your Name (optional)</label><input class="rate-input" type="text" placeholder="Anonymous"/></div>
 <div class="rate-form-group"><label class="rate-label">Your Review (optional)</label><textarea class="rate-textarea" rows="4" maxlength="500" placeholder="How has this tool helped your institution?" oninput="document.getElementById('cc').textContent=this.value.length+'/500'"></textarea><div class="char-count" id="cc">0/500</div></div>
 <button class="btn-review">Submit Review</button>
 </div>
 <div class="reviews-section"><h3>Customer Reviews</h3><div class="no-reviews">No reviews yet. Be the first to rate this tool after purchase.</div></div>
-<div class="custom-cta"><h3>🔧 Need a custom version of this tool?</h3><p>We can brand it, modify it, or build something completely new for your institution.</p><a href="../index.html#contact" class="btn-custom">See Custom Options →</a></div>
+<div class="custom-cta"><h3>ðŸ”§ Need a custom version of this tool?</h3><p>We can brand it, modify it, or build something completely new for your institution.</p><a href="../index.html#contact" class="btn-custom">See Custom Options â†’</a></div>
 </div>
 <div class="sidebar">
 <div class="pricing-card">
 <div class="pricing-card-header"><h3>Get Access to Fee Reminder Automation</h3><p>Choose the plan that fits your institution</p></div>
-<div class="price-row" style="margin-top:16px;"><div class="price-row-top"><span class="price-plan-name">Monthly</span></div><div class="price-amount"><sup>₹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Cancel anytime</li><li>Up to 200 students/month</li><li>48hr WhatsApp support</li></ul><button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan — Fee Reminder Automation')">Subscribe Monthly</button></div>
-<div class="price-row popular"><div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div><div class="price-amount"><sup>₹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Up to 1,000 students/month</li><li>Bulk CSV upload</li><li>24hr support, email + WhatsApp</li></ul><button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan — Fee Reminder Automation')">Subscribe Yearly</button></div>
-<div class="price-row"><div class="price-row-top"><span class="price-plan-name">Lifetime</span></div><div class="price-amount"><sup>₹</sup>9,999</div><div class="price-gst">+ GST = ₹11,799 total</div><ul class="price-features"><li>Unlimited students</li><li>WhatsApp Business API</li><li>Multi-language templates</li></ul><button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan — Fee Reminder Automation')">Buy Lifetime</button></div>
-<div class="trust-badges"><div class="trust-item">🔒 Secure payment via Razorpay</div><div class="trust-item">🧾 GST Invoice auto-generated</div><div class="trust-item">🕐 7-day refund on monthly plans</div><div class="trust-item green">⚡ Instant access after payment</div></div>
+<div class="price-row" style="margin-top:16px;"><div class="price-row-top"><span class="price-plan-name">Monthly</span></div><div class="price-amount"><sup>â‚¹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Cancel anytime</li><li>Up to 200 students/month</li><li>48hr WhatsApp support</li></ul><button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan â€” Fee Reminder Automation')">Subscribe Monthly</button></div>
+<div class="price-row popular"><div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div><div class="price-amount"><sup>â‚¹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Up to 1,000 students/month</li><li>Bulk CSV upload</li><li>24hr support, email + WhatsApp</li></ul><button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan â€” Fee Reminder Automation')">Subscribe Yearly</button></div>
+<div class="price-row"><div class="price-row-top"><span class="price-plan-name">Lifetime</span></div><div class="price-amount"><sup>â‚¹</sup>9,999</div><div class="price-gst">+ GST = â‚¹11,799 total</div><ul class="price-features"><li>Unlimited students</li><li>WhatsApp Business API</li><li>Multi-language templates</li></ul><button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan â€” Fee Reminder Automation')">Buy Lifetime</button></div>
+<div class="trust-badges"><div class="trust-item">ðŸ”’ Secure payment via Razorpay</div><div class="trust-item">ðŸ§¾ GST Invoice auto-generated</div><div class="trust-item">ðŸ• 7-day refund on monthly plans</div><div class="trust-item green">âš¡ Instant access after payment</div></div>
 </div>
 </div>
 </div>
 <footer><div class="footer-inner">
 <div class="footer-top">
-<div class="footer-brand"><div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/></div><div class="f-tagline">Build Systems. Grow Faster.</div><p style="font-size:12px;color:rgba(255,255,255,.4)">© 2026 Scalioz — Scalioz Digital Business Solutions</p></div>
+<div class="footer-brand"><div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/></div><div class="f-tagline">Build Systems. Grow Faster.</div><p style="font-size:12px;color:rgba(255,255,255,.4)">Â© 2026 Scalioz â€” Scalioz Digital Business Solutions</p></div>
 <div class="footer-col"><h4>Quick Links</h4><a href="../tools.html">Tools</a><a href="../index.html#pricing">Pricing</a><a href="../index.html#support">Support</a></div>
 <div class="footer-col"><h4>Legal</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a><a href="#">Cookie Policy</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 Scalioz. All tools and content are proprietary to Scalioz Digital Business Solutions.</p><p>A Scalioz Digital Business Solutions Company — All Rights Reserved 2026</p></div>
+<div class="footer-bottom"><p>Â© 2026 Scalioz. All tools and content are proprietary to Scalioz Digital Business Solutions.</p><p>A Scalioz Digital Business Solutions Company â€” All Rights Reserved 2026</p></div>
 </div></footer>
 <script>
 const RAZORPAY_KEY='rzp_live_SsU1sQQQXDGPHX';
-function openRazorpay(plan,amt,desc){new Razorpay({key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,image:'../assets/logo.png',theme:{color:'#1A3CFF'},handler:function(r){alert('✅ Payment successful!\nID: '+r.razorpay_payment_id+'\n\nLicense key via WhatsApp in 5 mins.')}}).open()}
+function openRazorpay(plan,amt,desc){new Razorpay({key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,image:'../assets/logo.png',theme:{color:'#1A3CFF'},handler:function(r){alert('âœ… Payment successful!\nID: '+r.razorpay_payment_id+'\n\nLicense key via WhatsApp in 5 mins.')}}).open()}
 function generateReminder(){
 const name=document.getElementById('dName').value.trim()||'Student';
 const cls=document.getElementById('dClass').value.trim()||'your class';
@@ -237,15 +237,15 @@ const amount=parseFloat(document.getElementById('dAmount').value)||15000;
 const date=document.getElementById('dDate').value;
 const type=document.getElementById('dType').value;
 const channel=document.getElementById('dChannel').value;
-const btn=document.getElementById('demoBtn');btn.innerHTML='<span class="spinner"></span>Generating…';btn.disabled=true;
-setTimeout(()=>{btn.innerHTML='💬 Generate Reminder Message';btn.disabled=false;
+const btn=document.getElementById('demoBtn');btn.innerHTML='<span class="spinner"></span>Generatingâ€¦';btn.disabled=true;
+setTimeout(()=>{btn.innerHTML='ðŸ’¬ Generate Reminder Message';btn.disabled=false;
 const dateStr=date?new Date(date).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}):'the due date';
 const lateFee=type.includes('overdue')?Math.round(amount*0.02):0;
 const total=amount+lateFee;
 const msgs={
-whatsapp:{before:`Dear Parent of *${name}* (${cls}),\n\nThis is a friendly reminder that the fee of *₹${amount.toLocaleString('en-IN')}* is due on *${dateStr}*.\n\nKindly make the payment before the due date to avoid late fees.\n\nThank you,\nScalioz Education`,due:`Dear Parent of *${name}* (${cls}),\n\n⚠️ Today is the last day to pay the fee of *₹${amount.toLocaleString('en-IN')}* without penalty.\n\nPlease pay today to avoid a late fee of ₹${Math.round(amount*0.02).toLocaleString('en-IN')}.\n\nThank you,\nScalioz Education`,overdue3:`Dear Parent of *${name}* (${cls}),\n\n🔴 Fee OVERDUE — ₹${amount.toLocaleString('en-IN')} + Late Fee ₹${lateFee.toLocaleString('en-IN')} = *₹${total.toLocaleString('en-IN')}*\n\nPlease clear immediately to avoid further action.\n\nScalioz Education`,overdue7:`Dear Parent of *${name}* (${cls}),\n\n🚨 URGENT: Fee of ₹${amount.toLocaleString('en-IN')} is 7 days overdue.\nTotal payable: *₹${total.toLocaleString('en-IN')}* (incl. late fee)\n\nPlease contact the office immediately.\n\nScalioz Education`},
-sms:{before:`Fee Reminder: ${name} (${cls}) - ₹${amount.toLocaleString('en-IN')} due on ${dateStr}. Pay on time. -Scalioz Education`,due:`URGENT: ${name} fee ₹${amount.toLocaleString('en-IN')} due TODAY. Pay now to avoid late fee. -Scalioz Education`,overdue3:`OVERDUE: ${name} fee ₹${total.toLocaleString('en-IN')} (incl late fee). Pay immediately. -Scalioz Education`,overdue7:`FINAL NOTICE: ${name} fee ₹${total.toLocaleString('en-IN')} 7 days overdue. Contact office. -Scalioz Education`},
-email:{before:`Subject: Fee Reminder — ${name} (${cls})\n\nDear Parent,\n\nThis is to remind you that the tuition fee of ₹${amount.toLocaleString('en-IN')} for ${name} is due on ${dateStr}.\n\nPlease ensure timely payment to avoid late fees.\n\nRegards,\nFee Department`,due:`Subject: Fee Due Today — ${name}\n\nDear Parent,\n\nToday is the last day to pay ₹${amount.toLocaleString('en-IN')} for ${name} without penalty. A late fee of ₹${Math.round(amount*0.02).toLocaleString('en-IN')} will apply from tomorrow.\n\nRegards,\nFee Department`,overdue3:`Subject: OVERDUE Fee Notice — ${name}\n\nDear Parent,\n\nThe fee of ₹${amount.toLocaleString('en-IN')} for ${name} is now overdue. Total payable: ₹${total.toLocaleString('en-IN')}.\n\nPlease clear immediately.\n\nRegards,\nFee Department`,overdue7:`Subject: FINAL NOTICE — ${name}\n\nDear Parent,\n\nThis is a final notice. The fee of ₹${total.toLocaleString('en-IN')} for ${name} is 7 days overdue. Please contact the office.\n\nRegards,\nFee Department`}
+whatsapp:{before:`Dear Parent of *${name}* (${cls}),\n\nThis is a friendly reminder that the fee of *â‚¹${amount.toLocaleString('en-IN')}* is due on *${dateStr}*.\n\nKindly make the payment before the due date to avoid late fees.\n\nThank you,\nScalioz Education`,due:`Dear Parent of *${name}* (${cls}),\n\nâš ï¸ Today is the last day to pay the fee of *â‚¹${amount.toLocaleString('en-IN')}* without penalty.\n\nPlease pay today to avoid a late fee of â‚¹${Math.round(amount*0.02).toLocaleString('en-IN')}.\n\nThank you,\nScalioz Education`,overdue3:`Dear Parent of *${name}* (${cls}),\n\nðŸ”´ Fee OVERDUE â€” â‚¹${amount.toLocaleString('en-IN')} + Late Fee â‚¹${lateFee.toLocaleString('en-IN')} = *â‚¹${total.toLocaleString('en-IN')}*\n\nPlease clear immediately to avoid further action.\n\nScalioz Education`,overdue7:`Dear Parent of *${name}* (${cls}),\n\nðŸš¨ URGENT: Fee of â‚¹${amount.toLocaleString('en-IN')} is 7 days overdue.\nTotal payable: *â‚¹${total.toLocaleString('en-IN')}* (incl. late fee)\n\nPlease contact the office immediately.\n\nScalioz Education`},
+sms:{before:`Fee Reminder: ${name} (${cls}) - â‚¹${amount.toLocaleString('en-IN')} due on ${dateStr}. Pay on time. -Scalioz Education`,due:`URGENT: ${name} fee â‚¹${amount.toLocaleString('en-IN')} due TODAY. Pay now to avoid late fee. -Scalioz Education`,overdue3:`OVERDUE: ${name} fee â‚¹${total.toLocaleString('en-IN')} (incl late fee). Pay immediately. -Scalioz Education`,overdue7:`FINAL NOTICE: ${name} fee â‚¹${total.toLocaleString('en-IN')} 7 days overdue. Contact office. -Scalioz Education`},
+email:{before:`Subject: Fee Reminder â€” ${name} (${cls})\n\nDear Parent,\n\nThis is to remind you that the tuition fee of â‚¹${amount.toLocaleString('en-IN')} for ${name} is due on ${dateStr}.\n\nPlease ensure timely payment to avoid late fees.\n\nRegards,\nFee Department`,due:`Subject: Fee Due Today â€” ${name}\n\nDear Parent,\n\nToday is the last day to pay â‚¹${amount.toLocaleString('en-IN')} for ${name} without penalty. A late fee of â‚¹${Math.round(amount*0.02).toLocaleString('en-IN')} will apply from tomorrow.\n\nRegards,\nFee Department`,overdue3:`Subject: OVERDUE Fee Notice â€” ${name}\n\nDear Parent,\n\nThe fee of â‚¹${amount.toLocaleString('en-IN')} for ${name} is now overdue. Total payable: â‚¹${total.toLocaleString('en-IN')}.\n\nPlease clear immediately.\n\nRegards,\nFee Department`,overdue7:`Subject: FINAL NOTICE â€” ${name}\n\nDear Parent,\n\nThis is a final notice. The fee of â‚¹${total.toLocaleString('en-IN')} for ${name} is 7 days overdue. Please contact the office.\n\nRegards,\nFee Department`}
 };
 const typeLabels={before:'7 Days Before',due:'Due Today',overdue3:'3 Days Overdue',overdue7:'7 Days Overdue'};
 const channelBadge={whatsapp:'type-whatsapp',sms:'type-sms',email:'type-email'};
@@ -254,14 +254,15 @@ document.getElementById('reminderTypeBadge').textContent=channelLabel[channel];
 document.getElementById('reminderTypeBadge').className='reminder-type '+channelBadge[channel];
 document.getElementById('reminderDay').textContent=typeLabels[type];
 document.getElementById('reminderMsg').textContent=msgs[channel][type];
-document.getElementById('statAmt').textContent='₹'+amount.toLocaleString('en-IN');
-document.getElementById('statLateFee').textContent='₹'+lateFee.toLocaleString('en-IN');
-document.getElementById('statTotal').textContent='₹'+total.toLocaleString('en-IN');
+document.getElementById('statAmt').textContent='â‚¹'+amount.toLocaleString('en-IN');
+document.getElementById('statLateFee').textContent='â‚¹'+lateFee.toLocaleString('en-IN');
+document.getElementById('statTotal').textContent='â‚¹'+total.toLocaleString('en-IN');
 document.getElementById('reminderPreview').style.display='block';
 },800);
 }
 function toggleFaq(el){el.parentElement.classList.toggle('open')}
 let rating=0;function setRating(n){rating=n;document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('active',i<n))}
 </script>
-</body>
+<script src="../chatbot.js"></script></body>
 </html>
+

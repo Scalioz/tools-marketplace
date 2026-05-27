@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Exam Preparation Planner — Scalioz Education Tools</title>
+<title>Exam Preparation Planner â€” Scalioz Education Tools</title>
 <link rel="icon" href="../assets/logo.png" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -29,7 +29,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .section-title{font-family:var(--font);font-size:18px;font-weight:700;color:var(--gray-800);margin-bottom:12px}
 .what-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
 .what-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray-600);line-height:1.5}
-.what-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.what-list li::before{content:'âœ“';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
 .demo-box{background:linear-gradient(135deg,#1A3CFF 0%,#0A1860 100%);border-radius:16px;overflow:hidden;margin-bottom:28px}
 .demo-header{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12)}
 .demo-header h3{font-family:var(--font);font-size:16px;font-weight:700;color:var(--white)}
@@ -82,7 +82,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .price-gst{font-size:12px;color:var(--gray-400);margin-top:3px;margin-bottom:10px}
 .price-features{list-style:none;margin-bottom:12px}
 .price-features li{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600);padding:2px 0}
-.price-features li::before{content:'•';color:var(--blue);font-weight:700}
+.price-features li::before{content:'â€¢';color:var(--blue);font-weight:700}
 .btn-subscribe{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:11px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;width:100%;transition:all .2s}
 .btn-subscribe:hover{background:var(--navy)}
 .btn-subscribe.dark{background:var(--navy)}
@@ -138,7 +138,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../tools.html#education">Education</a> / <span>Exam Preparation Planner</span></div>
 <div class="page-wrap">
 <div class="content">
-<div class="tool-badge">📅 Education</div>
+<div class="tool-badge">ðŸ“… Education</div>
 <h1 class="tool-title">Exam Preparation Planner</h1>
 <p class="tool-subtitle">Generate a personalised day-by-day exam study schedule for students based on subjects, difficulty level, available study hours and exam dates.</p>
 <h2 class="section-title">What this tool does</h2>
@@ -152,7 +152,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
 </ul>
 <div class="demo-box">
 <div class="demo-header">
-<div><h3>Live Demo Preview</h3><p>Generate a study plan — enter your exam details below</p></div>
+<div><h3>Live Demo Preview</h3><p>Generate a study plan â€” enter your exam details below</p></div>
 <span class="demo-free-badge">FREE PREVIEW</span>
 </div>
 <div class="demo-inner">
@@ -183,7 +183,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <option value="English">English</option>
 <option value="History">History/Social Studies</option>
 </select></div>
-<div class="demo-group full"><button class="demo-btn" onclick="generatePlan()" id="demoBtn">📅 Generate Study Plan (Preview — Week 1)</button></div>
+<div class="demo-group full"><button class="demo-btn" onclick="generatePlan()" id="demoBtn">ðŸ“… Generate Study Plan (Preview â€” Week 1)</button></div>
 </div>
 <div class="plan-output" id="planOutput">
 <div class="plan-summary">
@@ -193,60 +193,60 @@ footer{background:var(--navy);padding:48px 24px 24px}
 </div>
 <div id="weekPlan"></div>
 <div class="demo-limit-note">
-<p>🔒 Full plan includes all weeks, revision days, mock test slots and PDF export.</p>
-<button class="demo-unlock-btn" onclick="document.querySelector('.pricing-card').scrollIntoView({behavior:'smooth'})">Unlock Full Plan →</button>
+<p>ðŸ”’ Full plan includes all weeks, revision days, mock test slots and PDF export.</p>
+<button class="demo-unlock-btn" onclick="document.querySelector('.pricing-card').scrollIntoView({behavior:'smooth'})">Unlock Full Plan â†’</button>
 </div>
 </div>
 </div>
 </div>
 <h2 class="section-title">Frequently Asked Questions</h2>
 <div class="faq-section">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">⌄</span></div><div class="faq-a">License key via WhatsApp immediately after payment. Unlock full multi-week plans, PDF export and parent-sharing features.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which exams does it support? <span class="faq-arrow">⌄</span></div><div class="faq-a">CBSE, ICSE, all State Boards, JEE Main, JEE Advanced, NEET, CUET, CA Foundation, and any custom exam schedule.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I create plans for multiple students? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. Yearly and lifetime plans support unlimited student plans. Each plan is unique to the student's weak subjects and available hours.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">⌄</span></div><div class="faq-a">7-day refund on monthly plans. Contact support@scalioz.com for assistance.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">License key via WhatsApp immediately after payment. Unlock full multi-week plans, PDF export and parent-sharing features.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which exams does it support? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">CBSE, ICSE, all State Boards, JEE Main, JEE Advanced, NEET, CUET, CA Foundation, and any custom exam schedule.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I create plans for multiple students? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. Yearly and lifetime plans support unlimited student plans. Each plan is unique to the student's weak subjects and available hours.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">7-day refund on monthly plans. Contact support@scalioz.com for assistance.</div></div>
 </div>
 <div class="rate-section">
 <h3>Rate this tool</h3><p>Only verified license holders can leave a review</p>
 <div class="rate-form-group"><label class="rate-label">License Key</label><input class="rate-input" type="text" placeholder="Enter your license key"/></div>
-<div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">★</span><span class="star" onclick="setRating(2)">★</span><span class="star" onclick="setRating(3)">★</span><span class="star" onclick="setRating(4)">★</span><span class="star" onclick="setRating(5)">★</span></div></div>
+<div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">â˜…</span><span class="star" onclick="setRating(2)">â˜…</span><span class="star" onclick="setRating(3)">â˜…</span><span class="star" onclick="setRating(4)">â˜…</span><span class="star" onclick="setRating(5)">â˜…</span></div></div>
 <div class="rate-form-group"><label class="rate-label">Your Name (optional)</label><input class="rate-input" type="text" placeholder="Anonymous"/></div>
 <div class="rate-form-group"><label class="rate-label">Your Review (optional)</label><textarea class="rate-textarea" rows="4" maxlength="500" placeholder="How has this tool helped?" oninput="document.getElementById('cc').textContent=this.value.length+'/500'"></textarea><div class="char-count" id="cc">0/500</div></div>
 <button class="btn-review">Submit Review</button>
 </div>
 <div class="reviews-section"><h3>Customer Reviews</h3><div class="no-reviews">No reviews yet. Be the first to rate this tool after purchase.</div></div>
-<div class="custom-cta"><h3>🔧 Need a custom version of this tool?</h3><p>We can brand it, modify it, or build something new for your institution.</p><a href="../index.html#contact" class="btn-custom">See Custom Options →</a></div>
+<div class="custom-cta"><h3>ðŸ”§ Need a custom version of this tool?</h3><p>We can brand it, modify it, or build something new for your institution.</p><a href="../index.html#contact" class="btn-custom">See Custom Options â†’</a></div>
 </div>
 <div class="sidebar">
 <div class="pricing-card">
 <div class="pricing-card-header"><h3>Get Access to Exam Preparation Planner</h3><p>Choose the plan that fits your institution</p></div>
-<div class="price-row" style="margin-top:16px;"><div class="price-row-top"><span class="price-plan-name">Monthly</span></div><div class="price-amount"><sup>₹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Cancel anytime</li><li>Unlimited study plans</li><li>48hr WhatsApp support</li></ul><button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan — Exam Preparation Planner')">Subscribe Monthly</button></div>
-<div class="price-row popular"><div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div><div class="price-amount"><sup>₹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>PDF plan export</li><li>Parent sharing feature</li><li>24hr support</li></ul><button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan — Exam Preparation Planner')">Subscribe Yearly</button></div>
-<div class="price-row"><div class="price-row-top"><span class="price-plan-name">Lifetime</span></div><div class="price-amount"><sup>₹</sup>9,999</div><div class="price-gst">+ GST = ₹11,799 total</div><ul class="price-features"><li>Pay once, use forever</li><li>Custom exam templates</li><li>Lifetime updates</li></ul><button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan — Exam Preparation Planner')">Buy Lifetime</button></div>
-<div class="trust-badges"><div class="trust-item">🔒 Secure payment via Razorpay</div><div class="trust-item">🧾 GST Invoice auto-generated</div><div class="trust-item">🕐 7-day refund on monthly plans</div><div class="trust-item green">⚡ Instant access after payment</div></div>
+<div class="price-row" style="margin-top:16px;"><div class="price-row-top"><span class="price-plan-name">Monthly</span></div><div class="price-amount"><sup>â‚¹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Cancel anytime</li><li>Unlimited study plans</li><li>48hr WhatsApp support</li></ul><button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan â€” Exam Preparation Planner')">Subscribe Monthly</button></div>
+<div class="price-row popular"><div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div><div class="price-amount"><sup>â‚¹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>PDF plan export</li><li>Parent sharing feature</li><li>24hr support</li></ul><button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan â€” Exam Preparation Planner')">Subscribe Yearly</button></div>
+<div class="price-row"><div class="price-row-top"><span class="price-plan-name">Lifetime</span></div><div class="price-amount"><sup>â‚¹</sup>9,999</div><div class="price-gst">+ GST = â‚¹11,799 total</div><ul class="price-features"><li>Pay once, use forever</li><li>Custom exam templates</li><li>Lifetime updates</li></ul><button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan â€” Exam Preparation Planner')">Buy Lifetime</button></div>
+<div class="trust-badges"><div class="trust-item">ðŸ”’ Secure payment via Razorpay</div><div class="trust-item">ðŸ§¾ GST Invoice auto-generated</div><div class="trust-item">ðŸ• 7-day refund on monthly plans</div><div class="trust-item green">âš¡ Instant access after payment</div></div>
 </div>
 </div>
 </div>
 <footer><div class="footer-inner">
 <div class="footer-top">
-<div class="footer-brand"><div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/></div><div class="f-tagline">Build Systems. Grow Faster.</div><p style="font-size:12px;color:rgba(255,255,255,.4)">© 2026 Scalioz</p></div>
+<div class="footer-brand"><div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/></div><div class="f-tagline">Build Systems. Grow Faster.</div><p style="font-size:12px;color:rgba(255,255,255,.4)">Â© 2026 Scalioz</p></div>
 <div class="footer-col"><h4>Quick Links</h4><a href="../tools.html">Tools</a><a href="../index.html#pricing">Pricing</a><a href="../index.html#support">Support</a></div>
 <div class="footer-col"><h4>Legal</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 Scalioz. All Rights Reserved.</p></div>
+<div class="footer-bottom"><p>Â© 2026 Scalioz. All Rights Reserved.</p></div>
 </div></footer>
 <script>
 const RAZORPAY_KEY='rzp_live_SsU1sQQQXDGPHX';
-function openRazorpay(plan,amt,desc){new Razorpay({key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,theme:{color:'#1A3CFF'},handler:function(r){alert('✅ Payment successful!\nID: '+r.razorpay_payment_id+'\n\nLicense key via WhatsApp in 5 mins.')}}).open()}
+function openRazorpay(plan,amt,desc){new Razorpay({key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,theme:{color:'#1A3CFF'},handler:function(r){alert('âœ… Payment successful!\nID: '+r.razorpay_payment_id+'\n\nLicense key via WhatsApp in 5 mins.')}}).open()}
 function generatePlan(){
 const name=document.getElementById('dName').value.trim()||'Student';
 const examDate=document.getElementById('dDate').value;
 const hours=parseInt(document.getElementById('dHours').value)||5;
 const weakSel=document.getElementById('dWeak');
 const weakSubjs=Array.from(weakSel.selectedOptions).map(o=>o.value);
-const btn=document.getElementById('demoBtn');btn.innerHTML='<span class="spinner"></span>Generating…';btn.disabled=true;
+const btn=document.getElementById('demoBtn');btn.innerHTML='<span class="spinner"></span>Generatingâ€¦';btn.disabled=true;
 setTimeout(()=>{
-btn.innerHTML='📅 Generate Study Plan (Preview — Week 1)';btn.disabled=false;
+btn.innerHTML='ðŸ“… Generate Study Plan (Preview â€” Week 1)';btn.disabled=false;
 const today=new Date();
 const exam=examDate?new Date(examDate):new Date(today.getTime()+30*24*60*60*1000);
 const daysLeft=Math.max(1,Math.ceil((exam-today)/(1000*60*60*24)));
@@ -259,7 +259,7 @@ document.getElementById('statSubjects').textContent=subjects.length;
 const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 const weekDiv=document.getElementById('weekPlan');weekDiv.innerHTML='';
 const weekEl=document.createElement('div');weekEl.className='week-plan';
-weekEl.innerHTML='<div class="week-title">📅 Week 1 Study Plan — '+name+'</div>';
+weekEl.innerHTML='<div class="week-title">ðŸ“… Week 1 Study Plan â€” '+name+'</div>';
 days.forEach(day=>{
 const row=document.createElement('div');row.className='day-row';
 if(day==='Sun'){row.innerHTML='<span class="day-name">'+day+'</span><span style="font-size:12px;color:rgba(255,255,255,.5)">Rest & Revision Day</span>';weekEl.appendChild(row);return;}
@@ -281,5 +281,6 @@ document.getElementById('planOutput').style.display='block';
 function toggleFaq(el){el.parentElement.classList.toggle('open')}
 let rating=0;function setRating(n){rating=n;document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('active',i<n))}
 </script>
-</body>
+<script src="../chatbot.js"></script></body>
 </html>
+

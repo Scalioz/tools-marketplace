@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Marks Predictor — Scalioz Education Tools</title>
+<title>Marks Predictor â€” Scalioz Education Tools</title>
 <link rel="icon" href="../assets/logo.png" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -28,7 +28,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .section-title{font-family:var(--font);font-size:18px;font-weight:700;color:var(--gray-800);margin-bottom:12px}
 .what-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
 .what-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray-600);line-height:1.5}
-.what-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.what-list li::before{content:'âœ“';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
 .demo-box{background:linear-gradient(135deg,#1A3CFF 0%,#0A1860 100%);border-radius:16px;overflow:hidden;margin-bottom:28px}
 .demo-header{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12)}
 .demo-header h3{font-family:var(--font);font-size:16px;font-weight:700;color:var(--white)}
@@ -66,7 +66,7 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sti
 .price-gst{font-size:12px;color:var(--gray-400);margin-top:3px;margin-bottom:10px}
 .price-features{list-style:none;margin-bottom:12px}
 .price-features li{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-600);padding:2px 0}
-.price-features li::before{content:'•';color:var(--blue);font-weight:700}
+.price-features li::before{content:'â€¢';color:var(--blue);font-weight:700}
 .btn-subscribe{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:11px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;width:100%;transition:all .2s}
 .btn-subscribe:hover{background:var(--navy)}
 .btn-subscribe.dark{background:var(--navy)}
@@ -122,21 +122,21 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../tools.html#education">Education</a> / <span>Marks Predictor</span></div>
 <div class="page-wrap">
 <div class="content">
-<div class="tool-badge">📈 Education</div>
+<div class="tool-badge">ðŸ“ˆ Education</div>
 <h1 class="tool-title">Marks Predictor</h1>
-<p class="tool-subtitle">Predict a student's likely exam marks based on their study patterns, past performance, attendance and preparation level — helping teachers and parents plan ahead.</p>
+<p class="tool-subtitle">Predict a student's likely exam marks based on their study patterns, past performance, attendance and preparation level â€” helping teachers and parents plan ahead.</p>
 <h2 class="section-title">What this tool does</h2>
 <ul class="what-list">
 <li>Instant analysis based on student profile, interests and academic data</li>
-<li>Easy-to-use interface — no training required for counsellors or teachers</li>
+<li>Easy-to-use interface â€” no training required for counsellors or teachers</li>
 <li>Results exportable as PDF for student and parent sharing</li>
 <li>Supports all Indian education boards and curriculum types</li>
-<li>Works on any device — desktop, tablet or mobile</li>
+<li>Works on any device â€” desktop, tablet or mobile</li>
 <li>Bulk processing available for yearly and lifetime plan users</li>
 </ul>
 <div class="demo-box">
 <div class="demo-header">
-<div><h3>Live Demo Preview</h3><p>Try it free — no login required</p></div>
+<div><h3>Live Demo Preview</h3><p>Try it free â€” no login required</p></div>
 <span class="demo-free-badge">FREE PREVIEW</span>
 </div>
 <div class="demo-inner">
@@ -147,7 +147,7 @@ footer{background:var(--navy);padding:48px 24px 24px}
 <div class="demo-group"><label class="demo-label">Study Hours/Day</label><input class="demo-input" type="number" id="dStudy" placeholder="E.g. 4" min="0" max="16"/></div>
 <div class="demo-group"><label class="demo-label">Assignment Completion</label><select class="demo-select" id="dAssign"><option value="100">100% (all submitted)</option><option value="80">~80% submitted</option><option value="60">~60% submitted</option><option value="40">Below 50%</option></select></div>
 <div class="demo-group"><label class="demo-label">Self-Assessment</label><select class="demo-select" id="dConf"><option value="high">Very well prepared</option><option value="medium">Moderately prepared</option><option value="low">Struggling / not prepared</option></select></div>
-<div class="demo-group full"><button class="demo-btn" onclick="predictMarks()" id="demoBtn">📈 Predict Exam Performance</button></div>
+<div class="demo-group full"><button class="demo-btn" onclick="predictMarks()" id="demoBtn">ðŸ“ˆ Predict Exam Performance</button></div>
 </div>
 <div id="predOutput" style="display:none;margin-top:16px;animation:fadeUp .4s ease">
 <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px;margin-bottom:12px">
@@ -159,49 +159,49 @@ footer{background:var(--navy);padding:48px 24px 24px}
 </div>
 <div id="predAdvice" style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;background:rgba(0,0,0,.2);padding:10px;border-radius:8px"></div>
 </div>
-<div class="demo-limit-note"><p>🔒 Full version: subject-wise prediction, trend charts, parent alerts and intervention suggestions.</p><button class="demo-unlock-btn" onclick="document.querySelector(&apos;.pricing-card&apos;).scrollIntoView({behavior:&apos;smooth&apos;})">Unlock Full Access →</button></div>
+<div class="demo-limit-note"><p>ðŸ”’ Full version: subject-wise prediction, trend charts, parent alerts and intervention suggestions.</p><button class="demo-unlock-btn" onclick="document.querySelector(&apos;.pricing-card&apos;).scrollIntoView({behavior:&apos;smooth&apos;})">Unlock Full Access â†’</button></div>
 </div>
 </div>
 </div>
 <h2 class="section-title">Frequently Asked Questions</h2>
 <div class="faq-section">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">⌄</span></div><div class="faq-a">License key via WhatsApp immediately after payment. Unlock full features including bulk processing, PDF export and advanced analytics.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use this for multiple students? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. Monthly supports unlimited individual checks. Yearly and lifetime add bulk CSV upload for processing hundreds of students at once.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the data accurate and up to date? <span class="faq-arrow">⌄</span></div><div class="faq-a">Yes. We update all data and algorithms annually. Lifetime users receive all updates free forever.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">⌄</span></div><div class="faq-a">7-day refund on monthly plans. Contact support@scalioz.com for assistance.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I access the tool after purchase? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">License key via WhatsApp immediately after payment. Unlock full features including bulk processing, PDF export and advanced analytics.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use this for multiple students? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. Monthly supports unlimited individual checks. Yearly and lifetime add bulk CSV upload for processing hundreds of students at once.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the data accurate and up to date? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">Yes. We update all data and algorithms annually. Lifetime users receive all updates free forever.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-arrow">âŒ„</span></div><div class="faq-a">7-day refund on monthly plans. Contact support@scalioz.com for assistance.</div></div>
 </div>
 <div class="rate-section">
 <h3>Rate this tool</h3><p>Only verified license holders can leave a review</p>
 <div class="rate-form-group"><label class="rate-label">License Key</label><input class="rate-input" type="text" placeholder="Enter your license key"/></div>
-<div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">★</span><span class="star" onclick="setRating(2)">★</span><span class="star" onclick="setRating(3)">★</span><span class="star" onclick="setRating(4)">★</span><span class="star" onclick="setRating(5)">★</span></div></div>
+<div class="rate-form-group"><label class="rate-label">Your Rating</label><div class="stars"><span class="star" onclick="setRating(1)">â˜…</span><span class="star" onclick="setRating(2)">â˜…</span><span class="star" onclick="setRating(3)">â˜…</span><span class="star" onclick="setRating(4)">â˜…</span><span class="star" onclick="setRating(5)">â˜…</span></div></div>
 <div class="rate-form-group"><label class="rate-label">Your Name (optional)</label><input class="rate-input" type="text" placeholder="Anonymous"/></div>
 <div class="rate-form-group"><label class="rate-label">Your Review (optional)</label><textarea class="rate-textarea" rows="4" maxlength="500" placeholder="How has this tool helped your institution?" oninput="document.getElementById('cc').textContent=this.value.length+'/500'"></textarea><div class="char-count" id="cc">0/500</div></div>
 <button class="btn-review">Submit Review</button>
 </div>
 <div class="reviews-section"><h3>Customer Reviews</h3><div class="no-reviews">No reviews yet. Be the first to rate this tool after purchase.</div></div>
-<div class="custom-cta"><h3>🔧 Need a custom version of this tool?</h3><p>We can brand it, modify it, or build something completely new for your institution.</p><a href="../index.html#contact" class="btn-custom">See Custom Options →</a></div>
+<div class="custom-cta"><h3>ðŸ”§ Need a custom version of this tool?</h3><p>We can brand it, modify it, or build something completely new for your institution.</p><a href="../index.html#contact" class="btn-custom">See Custom Options â†’</a></div>
 </div>
 <div class="sidebar">
 <div class="pricing-card">
 <div class="pricing-card-header"><h3>Get Access to Marks Predictor</h3><p>Choose the plan that fits your institution</p></div>
-<div class="price-row" style="margin-top:16px;"><div class="price-row-top"><span class="price-plan-name">Monthly</span></div><div class="price-amount"><sup>₹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Cancel anytime</li><li>Unlimited checks</li><li>48hr WhatsApp support</li></ul><button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan — Marks Predictor')">Subscribe Monthly</button></div>
-<div class="price-row popular"><div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div><div class="price-amount"><sup>₹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Bulk CSV upload</li><li>PDF export</li><li>24hr support, email + WhatsApp</li></ul><button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan — Marks Predictor')">Subscribe Yearly</button></div>
-<div class="price-row"><div class="price-row-top"><span class="price-plan-name">Lifetime</span></div><div class="price-amount"><sup>₹</sup>9,999</div><div class="price-gst">+ GST = ₹11,799 total</div><ul class="price-features"><li>Pay once, use forever</li><li>Lifetime updates</li><li>2 upgrades/year, call support</li></ul><button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan — Marks Predictor')">Buy Lifetime</button></div>
-<div class="trust-badges"><div class="trust-item">🔒 Secure payment via Razorpay</div><div class="trust-item">🧾 GST Invoice auto-generated</div><div class="trust-item">🕐 7-day refund on monthly plans</div><div class="trust-item green">⚡ Instant access after payment</div></div>
+<div class="price-row" style="margin-top:16px;"><div class="price-row-top"><span class="price-plan-name">Monthly</span></div><div class="price-amount"><sup>â‚¹</sup>499<span style="font-size:14px;font-weight:500;color:var(--gray-400)">/mo</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Cancel anytime</li><li>Unlimited checks</li><li>48hr WhatsApp support</li></ul><button class="btn-subscribe" onclick="openRazorpay('monthly',58902,'Monthly Plan â€” Marks Predictor')">Subscribe Monthly</button></div>
+<div class="price-row popular"><div class="price-row-top"><span class="price-plan-name">Yearly</span><span class="save-badge">SAVE 33%</span></div><div class="price-amount"><sup>â‚¹</sup>3,999<span style="font-size:14px;font-weight:500;color:var(--gray-600)">/yr</span></div><div class="price-gst">+ 18% GST</div><ul class="price-features"><li>Bulk CSV upload</li><li>PDF export</li><li>24hr support, email + WhatsApp</li></ul><button class="btn-subscribe" onclick="openRazorpay('yearly',471882,'Yearly Plan â€” Marks Predictor')">Subscribe Yearly</button></div>
+<div class="price-row"><div class="price-row-top"><span class="price-plan-name">Lifetime</span></div><div class="price-amount"><sup>â‚¹</sup>9,999</div><div class="price-gst">+ GST = â‚¹11,799 total</div><ul class="price-features"><li>Pay once, use forever</li><li>Lifetime updates</li><li>2 upgrades/year, call support</li></ul><button class="btn-subscribe dark" onclick="openRazorpay('lifetime',1179882,'Lifetime Plan â€” Marks Predictor')">Buy Lifetime</button></div>
+<div class="trust-badges"><div class="trust-item">ðŸ”’ Secure payment via Razorpay</div><div class="trust-item">ðŸ§¾ GST Invoice auto-generated</div><div class="trust-item">ðŸ• 7-day refund on monthly plans</div><div class="trust-item green">âš¡ Instant access after payment</div></div>
 </div>
 </div>
 </div>
 <footer><div class="footer-inner">
 <div class="footer-top">
-<div class="footer-brand"><div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/></div><div class="f-tagline">Build Systems. Grow Faster.</div><p style="font-size:12px;color:rgba(255,255,255,.4)">© 2026 Scalioz</p></div>
+<div class="footer-brand"><div class="f-logo"><img src="../assets/logo.png" alt="Scalioz" onerror="this.style.display='none'"/></div><div class="f-tagline">Build Systems. Grow Faster.</div><p style="font-size:12px;color:rgba(255,255,255,.4)">Â© 2026 Scalioz</p></div>
 <div class="footer-col"><h4>Quick Links</h4><a href="../tools.html">Tools</a><a href="../index.html#pricing">Pricing</a><a href="../index.html#support">Support</a></div>
 <div class="footer-col"><h4>Legal</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 Scalioz. All Rights Reserved.</p></div>
+<div class="footer-bottom"><p>Â© 2026 Scalioz. All Rights Reserved.</p></div>
 </div></footer>
 <script>
 const RAZORPAY_KEY='rzp_live_SsU1sQQQXDGPHX';
-function openRazorpay(plan,amt,desc){new Razorpay({key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,theme:{color:'#1A3CFF'},handler:function(r){alert('✅ Payment successful!\nID: '+r.razorpay_payment_id+'\n\nLicense key via WhatsApp in 5 mins.')}}).open()}
+function openRazorpay(plan,amt,desc){new Razorpay({key:RAZORPAY_KEY,amount:amt,currency:'INR',name:'Scalioz Systems',description:desc,theme:{color:'#1A3CFF'},handler:function(r){alert('âœ… Payment successful!\nID: '+r.razorpay_payment_id+'\n\nLicense key via WhatsApp in 5 mins.')}}).open()}
 
 function predictMarks(){
 const name=document.getElementById("dName").value.trim()||"Student";
@@ -210,9 +210,9 @@ const atten=parseFloat(document.getElementById("dAtten").value)||75;
 const study=parseFloat(document.getElementById("dStudy").value)||3;
 const assign=parseInt(document.getElementById("dAssign").value)||80;
 const conf=document.getElementById("dConf").value;
-const btn=document.getElementById("demoBtn");btn.innerHTML="<span class=\"spinner\"></span>Predicting…";btn.disabled=true;
+const btn=document.getElementById("demoBtn");btn.innerHTML="<span class=\"spinner\"></span>Predictingâ€¦";btn.disabled=true;
 setTimeout(()=>{
-btn.innerHTML="📈 Predict Exam Performance";btn.disabled=false;
+btn.innerHTML="ðŸ“ˆ Predict Exam Performance";btn.disabled=false;
 const confScore={high:10,medium:0,low:-10}[conf]||0;
 const studyScore=Math.min(15,study*2);
 const attenScore=(atten-60)*0.3;
@@ -226,17 +226,18 @@ document.getElementById("predMin").textContent=minP+"%";
 document.getElementById("predLikely").textContent=likely+"%";
 document.getElementById("predMax").textContent=maxP+"%";
 let advice="";
-if(atten<75)advice+="⚠️ Attendance below 75% — risk of not being allowed to sit the exam. ";
-if(study<3)advice+="📚 Increase daily study hours to at least 3-4 for better results. ";
-if(conf==="low")advice+="🎯 Student is struggling — consider extra coaching or one-on-one sessions. ";
-if(likely>=75)advice+="✅ On track for a good result. Maintain consistency and focus on revision. ";
-if(likely<40)advice+="🔴 High risk of failure. Immediate intervention recommended.";
-document.getElementById("predAdvice").textContent=advice||"📊 Consistent preparation will help achieve the predicted score range.";
+if(atten<75)advice+="âš ï¸ Attendance below 75% â€” risk of not being allowed to sit the exam. ";
+if(study<3)advice+="ðŸ“š Increase daily study hours to at least 3-4 for better results. ";
+if(conf==="low")advice+="ðŸŽ¯ Student is struggling â€” consider extra coaching or one-on-one sessions. ";
+if(likely>=75)advice+="âœ… On track for a good result. Maintain consistency and focus on revision. ";
+if(likely<40)advice+="ðŸ”´ High risk of failure. Immediate intervention recommended.";
+document.getElementById("predAdvice").textContent=advice||"ðŸ“Š Consistent preparation will help achieve the predicted score range.";
 document.getElementById("predOutput").style.display="block";
 },900);
 }
 function toggleFaq(el){el.parentElement.classList.toggle('open')}
 let rating=0;function setRating(n){rating=n;document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('active',i<n))}
 </script>
-</body>
+<script src="../chatbot.js"></script></body>
 </html>
+
