@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -857,6 +857,30 @@
     document.getElementById('tools-count').textContent = 'Showing ' + visible + ' tool' + (visible !== 1 ? 's' : '');
     document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
   }
+</script>
+<script>
+  // Replace emoji placeholders with real Unsplash images based on category
+  (function() {
+    const urls = {
+      'healthcare': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80',
+      'real-estate': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80',
+      'construction': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80',
+      'education': 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80'
+    };
+
+    document.querySelectorAll('.tool-card').forEach(card => {
+      const cat = card.dataset.category;
+      const src = urls[cat] || urls['real-estate'];
+      const img = document.createElement('img');
+      img.src = src;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+
+      const placeholder = card.querySelector('.card-img-placeholder');
+      if (placeholder) placeholder.replaceWith(img);
+    });
+  })();
 </script>
 </body>
 </html>
