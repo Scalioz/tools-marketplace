@@ -1,173 +1,813 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>All Tools — Scalioz Tools Marketplace</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f8f9fa;color:#333}
-header{background:#fff;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.logo img{height:65px;width:auto}
-nav{display:flex;align-items:center;gap:30px}
-nav a{color:#333;text-decoration:none;font-size:14px;font-weight:500}
-nav a:hover{color:#0A1860}
-.btn-getstarted{background:#1A3CFF;color:#fff!important;padding:10px 24px;border-radius:8px;font-weight:bold!important}
-.page-hero{background:#0A1860;color:#fff;padding:50px 40px;text-align:center}
-.page-hero h1{font-size:36px;font-weight:800;margin-bottom:10px}
-.page-hero p{font-size:16px;opacity:.8}
-.toolbar{background:#fff;padding:20px 40px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:80px;z-index:99}
-.filters{display:flex;gap:10px;flex-wrap:wrap}
-.filter-btn{padding:8px 18px;border-radius:20px;border:2px solid #ddd;background:#fff;color:#555;cursor:pointer;font-size:13px;font-weight:600;transition:all .2s}
-.filter-btn.active,.filter-btn:hover{background:#1A3CFF;color:#fff;border-color:#1A3CFF}
-.search-wrap{display:flex;align-items:center;gap:10px;background:#f5f5f5;padding:8px 16px;border-radius:20px}
-.search-wrap input{border:none;background:transparent;outline:none;font-size:14px;width:200px}
-.view-btns{display:flex;gap:5px}
-.view-btn{padding:7px 10px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer;font-size:14px}
-.view-btn.active{background:#1A3CFF;color:#fff;border-color:#1A3CFF}
-.content{padding:40px;max-width:1200px;margin:0 auto}
-.tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
-.tool-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eee;transition:all .3s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
-.tool-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.12);transform:translateY(-4px)}
-.card-img{background:linear-gradient(135deg,#1A3CFF,#00C8FF);display:block;position:relative;}
-.card-img img{width:100%;height:200px;object-fit:cover;border-radius:12px 12px 0 0;}
-.card-img img{width:100%;height:200px;object-fit:cover;border-radius:12px 12px 0 0;}
-.card-img .rating{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:bold;color:#f59e0b}
-.card-body{padding:20px}
-.card-niche{display:inline-block;background:#e8f0ff;color:#1A3CFF;font-size:11px;font-weight:700;padding:3px 10px;border-radius:8px;margin-bottom:10px;text-transform:uppercase}
-.card-niche.healthcare{background:#e8fff0;color:#0a8a4a}
-.card-niche.realestate{background:#fff8e8;color:#b45309}
-.card-niche.construction{background:#ffeee8;color:#c2410c}
-.card-niche.education{background:#f0e8ff;color:#6d28d9}
-.card-body h3{font-size:16px;font-weight:700;color:#0A1860;margin-bottom:6px;line-height:1.3}
-.card-body p{font-size:13px;color:#666;line-height:1.5;margin-bottom:15px}
-.card-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.card-price{font-size:14px;font-weight:700;color:#0A1860}
-.btn-view,.view-btn{background:#1A3CFF;color:#fff;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:none;cursor:pointer;display:inline-block}
-.btn-view:hover,.view-btn:hover{background:#0A1860}
-.coming-soon-card{opacity:.7}
-.coming-soon-card .card-img{background:linear-gradient(135deg,#94a3b8,#cbd5e1)}
-.coming-soon-badge{position:absolute;top:10px;left:10px;background:#f59e0b;color:#fff;font-size:11px;font-weight:bold;padding:3px 10px;border-radius:8px}
-.btn-coming{background:#cbd5e1;color:#64748b;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;border:none;cursor:default}
-.results-count{color:#666;font-size:14px;margin-bottom:20px}
-footer{background:#0d0f1a;color:#fff;padding:40px;text-align:center;margin-top:60px}
-footer img{height:45px;margin-bottom:12px}
-footer .tagline{color:#00C8FF;font-size:13px;margin-bottom:8px}
-footer p{color:#aaa;font-size:13px}
-footer a{color:#00C8FF;text-decoration:none}
-@media(max-width:1024px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}@media(max-width:768px){.toolbar{top:70px}.tools-grid{grid-template-columns:1fr}.search-wrap input{width:120px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Tools — Scalioz Tools Marketplace</title>
+  <meta name="description" content="35+ ready-to-use business tools for clinics, real estate, construction, and education. Razorpay-powered, GST-compliant, built for Indian businesses.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0A1860;
+      --blue: #1A3CFF;
+      --cyan: #00C8FF;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-500: #64748b;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.12);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.18);
+      --radius: 12px;
+    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--gray-50); color: var(--gray-900); }
+
+    /* NAVBAR */
+    .navbar {
+      background: white; border-bottom: 1px solid var(--gray-200);
+      padding: 0 2rem; height: 64px; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0; z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .navbar img { height: 36px; }
+    .navbar a { text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: var(--gray-700); font-size: 0.9rem; font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: white !important; padding: 0.5rem 1.25rem;
+      border-radius: 8px; font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--navy) !important; color: white !important; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d2080 60%, #1A3CFF 100%);
+      color: white; text-align: center; padding: 4rem 2rem 3.5rem;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 0.75rem; }
+    .hero p { font-size: 1.1rem; opacity: 0.8; }
+
+    /* FILTERS */
+    .filters-bar {
+      background: white; border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 2rem; position: sticky; top: 64px; z-index: 90;
+      display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.1rem; border-radius: 50px; border: 1.5px solid var(--gray-200);
+      background: white; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: all 0.18s; color: var(--gray-700); display: flex; align-items: center; gap: 0.35rem;
+    }
+    .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+    .search-wrap { margin-left: auto; position: relative; }
+    .search-wrap input {
+      padding: 0.5rem 1rem 0.5rem 2.25rem; border-radius: 50px;
+      border: 1.5px solid var(--gray-200); font-size: 0.85rem; width: 220px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-wrap input:focus { border-color: var(--blue); }
+    .search-wrap svg { position: absolute; left: 0.7rem; top: 50%; transform: translateY(-50%); color: var(--gray-500); }
+
+    /* TOOLS GRID */
+    .tools-section { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .tools-count { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1.25rem; font-weight: 500; }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* TOOL CARD */
+    .tool-card {
+      background: white; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--gray-200); transition: box-shadow 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .tool-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .card-img {
+      height: 160px; overflow: hidden; position: relative;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+    }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+    .card-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+    }
+    .card-new-badge {
+      position: absolute; top: 10px; left: 10px;
+      background: #10b981; color: white; font-size: 0.65rem; font-weight: 800;
+      padding: 0.2rem 0.55rem; border-radius: 50px; letter-spacing: 0.05em;
+    }
+    .card-cat-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(0,0,0,0.45); color: white; font-size: 0.65rem; font-weight: 700;
+      padding: 0.2rem 0.55rem; border-radius: 50px; backdrop-filter: blur(4px);
+    }
+    .card-body { padding: 1.1rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-size: 0.7rem; font-weight: 700; color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.35rem;
+    }
+    .card-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 0.4rem; line-height: 1.3; }
+    .card-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; flex: 1; margin-bottom: 0.9rem; }
+    .card-footer { display: flex; flex-direction: column; gap: 0.5rem; }
+    .card-price { font-size: 0.78rem; color: var(--gray-700); font-weight: 600; }
+    .card-price span { color: var(--blue); font-weight: 800; }
+    .card-actions { display: flex; gap: 0.5rem; }
+    .btn-try {
+      flex: 1; padding: 0.6rem; border-radius: 8px; border: none;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: white; font-weight: 700; font-size: 0.82rem; cursor: pointer;
+      text-decoration: none; text-align: center; transition: opacity 0.15s;
+    }
+    .btn-try:hover { opacity: 0.88; }
+    .btn-wa {
+      padding: 0.6rem 0.75rem; border-radius: 8px; border: 1.5px solid #16a34a;
+      background: #f0fdf4; color: #16a34a; font-weight: 700; font-size: 0.82rem;
+      cursor: pointer; text-decoration: none; text-align: center; transition: background 0.15s;
+      display: flex; align-items: center; gap: 0.3rem; white-space: nowrap;
+    }
+    .btn-wa:hover { background: #dcfce7; }
+
+    /* NO RESULTS */
+    .no-results { text-align: center; padding: 4rem 2rem; color: var(--gray-500); }
+    .no-results p { font-size: 1rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.7);
+      text-align: center; padding: 2.5rem 2rem; margin-top: 4rem; font-size: 0.85rem;
+    }
+    footer img { height: 32px; margin-bottom: 1rem; filter: brightness(0) invert(1); opacity: 0.8; }
+    footer .tagline { color: var(--cyan); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--cyan); }
+    footer .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .search-wrap { margin-left: 0; width: 100%; }
+      .search-wrap input { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="logo"><a href="index.html"><img alt="Scalioz" src="assets/logo.png"/></a></div>
-<nav>
-<a href="tools.html">Tools</a>
-<a href="index.html#pricing">Pricing</a>
-<a href="mailto:info@scalioz.com">Support</a>
-<a href="https://www.scalioz.com">Custom</a>
-<a class="btn-getstarted" href="#">Get Started</a>
-</nav>
-</header>
-<div class="page-hero">
-<h1>All Tools</h1>
-<p>35+ tools across 4 industries — built for Indian businesses</p>
-</div>
-<div class="toolbar">
-<div class="filters">
-<button class="filter-btn active" onclick="filterTools('all')">All</button>
-<button class="filter-btn" onclick="filterTools('healthcare')">🏥 Healthcare</button>
-<button class="filter-btn" onclick="filterTools('realestate')">🏠 Real Estate</button>
-<button class="filter-btn" onclick="filterTools('construction')">🏗 Construction &amp; PEB</button>
-<button class="filter-btn" onclick="filterTools('education')">🎓 Education</button>
-</div>
-<div class="search-wrap">
-<span>🔍</span>
-<input id="searchInput" onkeyup="searchTools()" placeholder="Search tools..." type="text"/>
-</div>
-</div>
-<div class="content">
-<p class="results-count" id="resultsCount">Showing all 35 tools</p>
-<div class="tools-grid" id="toolsGrid">
-<!-- HEALTHCARE TOOLS -->
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Clinic Revenue Leakage Calculator" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Clinic Revenue Leakage Calculator</h3><p>Find out exactly how much revenue your clinic is losing — beyond appointments.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/clinic-revenue-leakage-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Patient No-Show Cost Calculator" src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Patient No-Show Cost Calculator</h3><p>Find the true cost of patient no-shows — beyond the obvious missed appointment.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/patient-no-show-cost-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Healthcare Staff Productivity Calculator" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Healthcare Staff Productivity Calculator</h3><p>Find out exactly how productive your clinic staff really are.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/healthcare-staff-productivity-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Clinic Marketing ROI Calculator" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Clinic Marketing ROI Calculator</h3><p>Find out exactly which marketing channels are working for your clinic.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/clinic-marketing-roi-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Treatment Cost Estimator" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Treatment Cost Estimator</h3><p>Give patients instant transparent cost estimates before consultations.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/treatment-cost-estimator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Clinic Growth Intelligence Dashboard" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Clinic Growth Intelligence Dashboard</h3><p>Track every growth metric that matters for your clinic in one place.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/clinic-growth-intelligence-dashboard">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Health Risk Assessment Tool" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Health Risk Assessment Tool</h3><p>Help patients understand their health risks in 2 minutes.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/health-risk-assessment-tool">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="AI Appointment Assistant" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>AI Appointment Assistant</h3><p>Let patients book, reschedule and get reminders automatically.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/ai-appointment-assistant">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Digital Token System" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Healthcare</span><h3>Digital Token System</h3><p>Eliminate waiting room chaos — give patients a digital token and real-time updates.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/digital-token-system">View Tool →</a></div></div>
-<!-- REAL ESTATE TOOLS -->
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Property Affordability Calculator" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Property Affordability Calculator</h3><p>Help buyers understand exactly what property they can afford.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/property-affordability-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Rental Yield Calculator" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Rental Yield Calculator</h3><p>Calculate gross and net rental yields to evaluate investment properties.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/rental-yield-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Property ROI Projection Tool" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Property ROI Projection Tool</h3><p>Project long-term returns on property investments with detailed modelling.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/property-roi-projection-tool">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Home Loan Eligibility Estimator" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Home Loan Eligibility Estimator</h3><p>Estimate home loan eligibility based on income, age, and obligations.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/home-loan-eligibility-estimator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Property Comparison Dashboard" src="https://images.unsplash.com/photo-1582407947304-fd86f28320be?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Property Comparison Dashboard</h3><p>Compare multiple properties side-by-side across key investment criteria.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/property-comparison-dashboard">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Broker Lead Tracker" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Broker Lead Tracker</h3><p>Comprehensive lead management and follow-up tracker for real estate brokers.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/broker-lead-tracker">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Locality Intelligence Tool" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Locality Intelligence Tool</h3><p>Analyse locality potential, infrastructure, and investment attractiveness.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/locality-intelligence-tool">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Should I Buy This Property? Analyzer" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Real Estate</span><h3>Should I Buy This Property? Analyzer</h3><p>AI-powered property purchase decision tool for home buyers and investors.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/should-i-buy-this-property-analyzer">View Tool →</a></div></div>
-<!-- CONSTRUCTION TOOLS -->
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="PEB Budget Estimator" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>PEB Budget Estimator</h3><p>Estimate pre-engineered building costs for factory and warehouse projects.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/peb-budget-estimator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Warehouse Cost Estimator" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>Warehouse Cost Estimator</h3><p>Comprehensive warehouse construction cost estimation for developers.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/warehouse-cost-estimator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Cold Storage ROI Calculator" src="https://images.unsplash.com/photo-1571847140471-1d7766e825ea?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>Cold Storage ROI Calculator</h3><p>Calculate returns on cold storage facility investments with projections.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/cold-storage-roi-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Construction Timeline Estimator" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>Construction Timeline Estimator</h3><p>Plan construction timelines based on project scope and resources.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/construction-timeline-estimator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Steel Weight Calculator" src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>Steel Weight Calculator</h3><p>Precise steel weight calculations for structural engineering and procurement.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/steel-weight-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="BOQ Generator" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>BOQ Generator</h3><p>Automated Bill of Quantities generator for construction projects and tenders.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/boq-generator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Roofing Sheet Requirement Calculator" src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>Roofing Sheet Requirement Calculator</h3><p>Calculate exact roofing sheet quantities for any construction project.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="https://tools.scalioz.com/tools/roofing-sheet-requirement-calculator">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Industrial Project ROI Calculator" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Construction</span><h3>Industrial Project ROI Calculator</h3><p>Comprehensive ROI analysis for industrial construction projects.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="construction/industrial-roi.html">View Tool →</a></div></div>
-<!-- EDUCATION TOOLS -->
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Course Eligibility Checker" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Course Eligibility Checker</h3><p>Help students find courses they are eligible for based on their academic profile.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="education/course-eligibility.html">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Scholarship Eligibility Tool" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Scholarship Eligibility Tool</h3><p>Match students with scholarships based on academic and financial profile.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="education/scholarship-eligibility.html">View Tool →</a></div></div>
-<div class="tool-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Student Performance Dashboard" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Student Performance Dashboard</h3><p>Comprehensive student performance tracking for teachers and parents.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="education/student-performance.html">View Tool →</a></div></div>
-<div class="tool-card coming-soon-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Exam Preparation Planner" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Exam Preparation Planner</h3><p>AI-powered exam preparation schedule generator for students.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="#">View Tool →</a></div></div>
-<div class="tool-card coming-soon-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Career Recommendation Tool" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Career Recommendation Tool</h3><p>AI-driven career path recommendations based on student interests.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="#">View Tool →</a></div></div>
-<div class="tool-card coming-soon-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Marks Predictor" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Marks Predictor</h3><p>Predict exam marks based on study patterns and past performance.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="#">View Tool →</a></div></div>
-<div class="tool-card coming-soon-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="AI Stream Selector" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>AI Stream Selector</h3><p>AI-powered stream selection for Science, Commerce or Arts.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="#">View Tool →</a></div></div>
-<div class="tool-card coming-soon-card"><div class="card-img" style="position:relative;height:200px;overflow:hidden;border-radius:12px 12px 0 0"><img alt="Student Inquiry Qualification Tool" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&amp;h=280&amp;fit=crop" style="width:100%;height:100%;object-fit:cover"/><div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 10px;font-size:12px;font-weight:700;color:#1E2642">⭐ New</div></div><div class="card-body" style="padding:20px"><span class="category-badge card-niche">Education</span><h3>Student Inquiry Qualification Tool</h3><p>Automatically qualify and prioritise student admission enquiries.</p><div>From ₹499/mo</div><a href="https://wa.me/919043616100?text=Hi%2C+I+need+a+custom+version+of+this+tool" style="color:#25D366;font-size:12px;font-weight:600;display:inline-block;margin-top:8px;margin-bottom:8px">💬 Need a custom version? WhatsApp us today</a><a class="view-btn" href="#">View Tool →</a></div></div>
-</div>
-</div>
-<footer>
-<img alt="Scalioz" src="assets/logo.png"/>
-<div class="tagline">BUILD SYSTEMS. GROW FASTER.</div>
-<p>┬⌐ 2026 Scalioz — Seociate Digital Business Solutions</p>
-<p style="margin-top:8px"><a href="mailto:info@scalioz.com">info@scalioz.com</a> | <a href="https://www.scalioz.com">www.scalioz.com</a></p>
-</footer>
-<script>
-function filterTools(niche) {
-  const cards = document.querySelectorAll('.tool-card');
-  const btns = document.querySelectorAll('.filter-btn');
-  btns.forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  let count = 0;
-  cards.forEach(card => {
-    if(niche === 'all' || card.dataset.niche === niche) {
-      card.style.display = 'block';
-      count++;
-    } else {
-      card.style.display = 'none';
-    }
-  });
-  document.getElementById('resultsCount').textContent = `Showing ${count} tools`;
-}
 
-function searchTools() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const cards = document.querySelectorAll('.tool-card');
-  let count = 0;
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    if(text.includes(input)) {
-      card.style.display = 'block';
-      count++;
-    } else {
-      card.style.display = 'none';
-    }
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html"><img src="assets/logo.png" alt="Scalioz" /></a>
+  <div class="nav-links">
+    <a href="tools.html">Tools</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://wa.me/919043616100" target="_blank" rel="noopener">Support</a>
+    <a href="#custom">Custom</a>
+    <a href="tools.html" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>All Tools</h1>
+  <p>35+ tools across 4 industries — built for Indian businesses</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="healthcare">🏥 Healthcare</button>
+  <button class="filter-btn" data-filter="real-estate">🏠 Real Estate</button>
+  <button class="filter-btn" data-filter="construction">🏗️ Construction & PEB</button>
+  <button class="filter-btn" data-filter="education">🎓 Education</button>
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search-input" placeholder="Search tools..." oninput="filterTools()" />
+  </div>
+</div>
+
+<!-- TOOLS -->
+<div class="tools-section">
+  <div class="tools-count" id="tools-count">Showing 35 tools</div>
+  <div class="tools-grid" id="tools-grid">
+
+    <!-- ===== HEALTHCARE ===== -->
+    <div class="tool-card" data-category="healthcare" data-name="clinic revenue leakage detector">
+      <div class="card-img"><div class="card-img-placeholder">💰</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Finance</div>
+        <div class="card-title">Clinic Revenue Leakage Detector</div>
+        <div class="card-desc">Pinpoint billing gaps, missed follow-ups, and under-priced services draining your clinic income.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/clinic-revenue-leakage.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Clinic%20Revenue%20Leakage%20Detector" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="patient no-show predictor">
+      <div class="card-img"><div class="card-img-placeholder">📅</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Scheduling</div>
+        <div class="card-title">Patient No-Show Predictor</div>
+        <div class="card-desc">Predict and prevent appointment no-shows before they cost you — reduce no-shows by up to 60%.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/patient-no-show.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Patient%20No-Show%20Predictor" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="staff productivity analyser">
+      <div class="card-img"><div class="card-img-placeholder">👥</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">HR</div>
+        <div class="card-title">Staff Productivity Analyser</div>
+        <div class="card-desc">Measure doctor utilisation, nurse workload, and admin efficiency. Fix underperformance before burnout hits.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/staff-productivity.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Staff%20Productivity%20Analyser" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="healthcare marketing roi calculator">
+      <div class="card-img"><div class="card-img-placeholder">📊</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Marketing</div>
+        <div class="card-title">Healthcare Marketing ROI Calculator</div>
+        <div class="card-desc">Know exactly which marketing channel is bringing patients. Stop guessing, start optimising.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/marketing-roi.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Healthcare%20Marketing%20ROI" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="treatment cost estimator">
+      <div class="card-img"><div class="card-img-placeholder">🏥</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Clinical</div>
+        <div class="card-title">Treatment Cost Estimator</div>
+        <div class="card-desc">Give patients transparent, instant cost estimates before treatment. Build trust with upfront pricing.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/treatment-cost.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Treatment%20Cost%20Estimator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="clinic growth dashboard">
+      <div class="card-img"><div class="card-img-placeholder">📈</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Growth</div>
+        <div class="card-title">Clinic Growth Dashboard</div>
+        <div class="card-desc">Your clinic's KPIs, goals, and growth score in one view. Know what to fix next.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/clinic-growth-dashboard.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Clinic%20Growth%20Dashboard" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="patient health risk assessment">
+      <div class="card-img"><div class="card-img-placeholder">❤️</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Preventive</div>
+        <div class="card-title">Patient Health Risk Assessment</div>
+        <div class="card-desc">Screen patients for chronic disease risk in under 2 minutes. Ideal for OPD and health camps.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/health-risk-assessment.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Health%20Risk%20Assessment" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="ai appointment assistant">
+      <div class="card-img"><div class="card-img-placeholder">🤖</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">AI</div>
+        <div class="card-title">AI Appointment Assistant</div>
+        <div class="card-desc">Automate booking, rescheduling, and follow-ups via WhatsApp — 24/7, zero staff effort.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/ai-appointment-assistant.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20AI%20Appointment%20Assistant" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="healthcare" data-name="digital token system queue">
+      <div class="card-img"><div class="card-img-placeholder">🔢</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Healthcare</span></div>
+      <div class="card-body">
+        <div class="card-tag">Queue</div>
+        <div class="card-title">Digital Token System</div>
+        <div class="card-desc">Eliminate waiting room chaos. Patients get tokens via WhatsApp and arrive on time.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="healthcare/digital-token-system.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Digital%20Token%20System" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== REAL ESTATE ===== -->
+    <div class="tool-card" data-category="real-estate" data-name="property affordability calculator">
+      <div class="card-img"><div class="card-img-placeholder">🏠</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">Buying</div>
+        <div class="card-title">Property Affordability Calculator</div>
+        <div class="card-desc">Know exactly what property you can afford before you fall in love with one.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/property-affordability.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Property%20Affordability%20Calculator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="rental yield calculator">
+      <div class="card-img"><div class="card-img-placeholder">📊</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">Investment</div>
+        <div class="card-title">Rental Yield Calculator</div>
+        <div class="card-desc">Find out if your property investment is actually working for you. Compare gross vs net yield.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/rental-yield.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Rental%20Yield%20Calculator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="property roi projection tool">
+      <div class="card-img"><div class="card-img-placeholder">📈</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">ROI</div>
+        <div class="card-title">Property ROI Projection Tool</div>
+        <div class="card-desc">Project your property's 5 and 10-year return before you buy. Compare multiple properties.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/property-roi-projection.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Property%20ROI%20Projection" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="home loan eligibility checker">
+      <div class="card-img"><div class="card-img-placeholder">🏦</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">Finance</div>
+        <div class="card-title">Home Loan Eligibility Checker</div>
+        <div class="card-desc">Check how much home loan you qualify for in 60 seconds — with EMI breakdown across major banks.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/home-loan-eligibility.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Home%20Loan%20Eligibility%20Checker" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="property comparison tool">
+      <div class="card-img"><div class="card-img-placeholder">⚖️</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">Compare</div>
+        <div class="card-title">Property Comparison Tool</div>
+        <div class="card-desc">Compare up to 3 properties side-by-side on price, location, amenities, and resale potential.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/property-comparison.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Property%20Comparison%20Tool" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="broker lead tracker crm">
+      <div class="card-img"><div class="card-img-placeholder">📋</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">CRM</div>
+        <div class="card-title">Broker Lead Tracker</div>
+        <div class="card-desc">Never lose a hot lead again. Track every prospect from enquiry to deal closure.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/broker-lead-tracker.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Broker%20Lead%20Tracker" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="locality intelligence report">
+      <div class="card-img"><div class="card-img-placeholder">🗺️</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">Location</div>
+        <div class="card-title">Locality Intelligence Report</div>
+        <div class="card-desc">Deep data on any neighbourhood — infrastructure pipeline, price trend, and growth potential score.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/locality-intelligence.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Locality%20Intelligence%20Report" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="real-estate" data-name="should i buy property decision">
+      <div class="card-img"><div class="card-img-placeholder">🤔</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Real Estate</span></div>
+      <div class="card-body">
+        <div class="card-tag">Decision</div>
+        <div class="card-title">Should I Buy This Property?</div>
+        <div class="card-desc">An honest AI-powered Buy / Wait / Skip recommendation — no bias, no pressure.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="real-estate/should-i-buy-property.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Should%20I%20Buy%20Property" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONSTRUCTION ===== -->
+    <div class="tool-card" data-category="construction" data-name="peb budget estimator pre-engineered building">
+      <div class="card-img"><div class="card-img-placeholder">🏗️</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">PEB</div>
+        <div class="card-title">PEB Budget Estimator</div>
+        <div class="card-desc">Get a Pre-Engineered Building cost estimate in under 3 minutes — material, fabrication, and erection.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/peb-budget-estimator.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20PEB%20Budget%20Estimator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="warehouse cost estimator">
+      <div class="card-img"><div class="card-img-placeholder">🏭</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">Warehouse</div>
+        <div class="card-title">Warehouse Cost Estimator</div>
+        <div class="card-desc">Budget warehouse construction accurately — civil, structural, MEP, and fit-out components.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/warehouse-cost-estimator.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Warehouse%20Cost%20Estimator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="cold storage roi calculator">
+      <div class="card-img"><div class="card-img-placeholder">❄️</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">Cold Storage</div>
+        <div class="card-title">Cold Storage ROI Calculator</div>
+        <div class="card-desc">Calculate returns on cold storage investment — payback period, opex, and 10-year projections.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/cold-storage-roi.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Cold%20Storage%20ROI%20Calculator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="construction timeline planner">
+      <div class="card-img"><div class="card-img-placeholder">📅</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">Planning</div>
+        <div class="card-title">Construction Timeline Planner</div>
+        <div class="card-desc">Build a realistic project schedule from concept to handover. Identify critical path and delays.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/construction-timeline.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Construction%20Timeline%20Planner" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="steel weight calculator structural">
+      <div class="card-img"><div class="card-img-placeholder">⚖️</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">Structural</div>
+        <div class="card-title">Steel Weight Calculator</div>
+        <div class="card-desc">Calculate IS section weights instantly for estimation and procurement — I-beams, channels, angles, hollow.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/steel-weight-calculator.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Steel%20Weight%20Calculator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="boq generator bill of quantities">
+      <div class="card-img"><div class="card-img-placeholder">📄</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">BOQ</div>
+        <div class="card-title">BOQ Generator</div>
+        <div class="card-desc">Generate a structured Bill of Quantities in minutes — civil, structural, architectural, and MEP trades.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/boq-generator.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20BOQ%20Generator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="roofing sheet calculator">
+      <div class="card-img"><div class="card-img-placeholder">🏠</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">Roofing</div>
+        <div class="card-title">Roofing Sheet Calculator</div>
+        <div class="card-desc">Calculate sheets, fasteners, and accessories with zero wastage. Accurate procurement every time.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/roofing-sheet-calculator.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Roofing%20Sheet%20Calculator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="construction" data-name="industrial roi calculator factory manufacturing">
+      <div class="card-img"><div class="card-img-placeholder">🏭</div><span class="card-new-badge">⭐ New</span><span class="card-cat-badge">Construction</span></div>
+      <div class="card-body">
+        <div class="card-tag">Industrial</div>
+        <div class="card-title">Industrial ROI Calculator</div>
+        <div class="card-desc">Know your factory or manufacturing unit's return on investment before you commit a single rupee.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="construction/industrial-roi.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Industrial%20ROI%20Calculator" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EDUCATION ===== -->
+    <div class="tool-card" data-category="education" data-name="course eligibility checker">
+      <div class="card-img"><div class="card-img-placeholder">🎓</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Admissions</div>
+        <div class="card-title">Course Eligibility Checker</div>
+        <div class="card-desc">Instantly check if a student meets eligibility criteria for any course or programme.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/course-eligibility.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Course%20Eligibility%20Checker" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="scholarship eligibility finder">
+      <div class="card-img"><div class="card-img-placeholder">🏆</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Finance</div>
+        <div class="card-title">Scholarship Eligibility Finder</div>
+        <div class="card-desc">Match students to scholarships they qualify for — government, private, and merit-based.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/scholarship-eligibility.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Scholarship%20Eligibility%20Finder" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="student performance analyser">
+      <div class="card-img"><div class="card-img-placeholder">📊</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Analytics</div>
+        <div class="card-title">Student Performance Analyser</div>
+        <div class="card-desc">Track and analyse student scores across subjects to identify weak areas early.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/student-performance.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Student%20Performance%20Analyser" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="fee reminder system">
+      <div class="card-img"><div class="card-img-placeholder">💳</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Admin</div>
+        <div class="card-title">Fee Reminder System</div>
+        <div class="card-desc">Automate fee due reminders via WhatsApp and SMS — reduce collection delays significantly.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/fee-reminder.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Fee%20Reminder%20System" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="exam planner schedule">
+      <div class="card-img"><div class="card-img-placeholder">📅</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Planning</div>
+        <div class="card-title">Exam Planner</div>
+        <div class="card-desc">Generate a personalised exam preparation schedule based on syllabus and available days.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/exam-planner.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Exam%20Planner" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="career recommendation tool">
+      <div class="card-img"><div class="card-img-placeholder">🚀</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Career</div>
+        <div class="card-title">Career Recommendation Tool</div>
+        <div class="card-desc">Match students to careers based on interests, strengths, and market demand data.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/career-recommendation.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Career%20Recommendation%20Tool" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="admission follow-up tracker">
+      <div class="card-img"><div class="card-img-placeholder">📋</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">CRM</div>
+        <div class="card-title">Admission Follow-up Tracker</div>
+        <div class="card-desc">Track every enquiry from first contact to enrolment. Never let a lead go cold.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/admission-followup.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Admission%20Follow-up%20Tracker" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="marks predictor result estimator">
+      <div class="card-img"><div class="card-img-placeholder">🎯</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Prediction</div>
+        <div class="card-title">Marks Predictor</div>
+        <div class="card-desc">Predict final exam scores based on internal marks, attendance, and study hours.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/marks-predictor.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Marks%20Predictor" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="stream selector science arts commerce">
+      <div class="card-img"><div class="card-img-placeholder">🔬</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Guidance</div>
+        <div class="card-title">Stream Selector</div>
+        <div class="card-desc">Help students choose Science, Commerce, or Arts based on strengths and career goals.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/stream-selector.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Stream%20Selector" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" data-category="education" data-name="student inquiry management">
+      <div class="card-img"><div class="card-img-placeholder">💬</div><span class="card-cat-badge">Education</span></div>
+      <div class="card-body">
+        <div class="card-tag">Inquiry</div>
+        <div class="card-title">Student Inquiry Manager</div>
+        <div class="card-desc">Capture, assign, and respond to student inquiries efficiently across all channels.</div>
+        <div class="card-footer">
+          <div class="card-price">From <span>₹499/mo</span> + GST</div>
+          <div class="card-actions">
+            <a class="btn-try" href="education/student-inquiry.html">Try Free</a>
+            <a class="btn-wa" href="https://wa.me/919043616100?text=Hi%2C%20interested%20in%20Student%20Inquiry%20Manager" target="_blank" rel="noopener">💬 ₹499/mo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="no-results" id="no-results" style="display:none;">
+    <p>No tools found. Try a different search or category.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/logo.png" alt="Scalioz" />
+  <div class="tagline">BUILD SYSTEMS. GROW FASTER.</div>
+  <p>© 2026 Scalioz — Seociate Digital Business Solutions</p>
+  <div class="footer-links">
+    <a href="mailto:info@scalioz.com">info@scalioz.com</a>
+    <a href="https://www.scalioz.com" target="_blank" rel="noopener">www.scalioz.com</a>
+    <a href="https://wa.me/919043616100" target="_blank" rel="noopener">WhatsApp Support</a>
+  </div>
+</footer>
+
+<script>
+  let activeFilter = 'all';
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      filterTools();
+    });
   });
-  document.getElementById('resultsCount').textContent = `Showing ${count} tools`;
-}
+
+  function filterTools() {
+    const search = document.getElementById('search-input').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.tool-card');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const cat = card.dataset.category;
+      const name = card.dataset.name;
+      const matchCat = activeFilter === 'all' || cat === activeFilter;
+      const matchSearch = !search || name.includes(search);
+      const show = matchCat && matchSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    document.getElementById('tools-count').textContent = 'Showing ' + visible + ' tool' + (visible !== 1 ? 's' : '');
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
 </script>
 </body>
 </html>
