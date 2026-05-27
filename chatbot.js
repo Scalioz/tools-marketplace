@@ -53,7 +53,8 @@
     }
     // Custom
     if (msg.includes("custom") || msg.includes("modify") || msg.includes("white label") || msg.includes("brand")) {
-      return CUSTOM_INFO;
+      setTimeout(() => szShowFlow("qualify_1"), 500);
+      return;
     }
     // Tool-specific
     for (const [key, desc] of Object.entries(TOOL_KB)) {
@@ -99,6 +100,22 @@
     realestate: { msg: "We have 8 Real Estate tools. What do you need?", options: ["Property ROI / yield", "Loan eligibility", "Lead management", "Property comparison", "Locality research", "Buy decision help"] },
     construction: { msg: "We have 8 Construction tools. What's your need?", options: ["PEB cost estimate", "Warehouse budget", "Cold storage ROI", "Project timeline", "Steel / BOQ", "Roofing calculation"] },
     education: { msg: "We have 10 Education tools. What's your focus?", options: ["Student performance", "Admissions & eligibility", "Fee collection", "Career guidance", "Exam planning"] },
+    qualify_1: {
+      msg: "Great — custom builds are our speciality! Let me understand your needs first.\n\nWhich industry is your business in?",
+      options: ["🏥 Healthcare / Clinic", "🏠 Real Estate", "🏗️ Construction & PEB", "🎓 Education", "🏭 Industrial / Manufacturing"]
+    },
+    qualify_2: {
+      msg: "Got it! What do you want the custom tool to do?",
+      options: ["Automate a manual process", "Calculate / estimate costs or ROI", "Track leads or customers", "Generate reports or documents", "Something entirely new"]
+    },
+    qualify_3: {
+      msg: "Understood. What's your budget range for this custom build?",
+      options: ["Under ₹10,000", "₹10,000 – ₹25,000", "₹25,000 – ₹50,000", "Above ₹50,000", "Not sure yet — need a quote"]
+    },
+    qualify_4: {
+      msg: "Perfect! Last question — when do you need this?",
+      options: ["Urgently (within 1 week)", "Within a month", "1–3 months", "Just exploring for now"]
+    },
   };
 
   const TOOL_RESPONSES = {
@@ -266,8 +283,32 @@
       if (opt.includes("specific tool")) { szAddBot("Sure! Type the tool name or describe what you're looking for and I'll explain everything about it."); }
       else if (opt.includes("industry")) szShowFlow("browse");
       else if (opt.includes("Pricing")) { szAddBot(PRICING_INFO); szShowNextOptions(); }
-      else if (opt.includes("custom")) { szAddBot(CUSTOM_INFO); szSendWA("interested in custom tool"); }
+      else if (opt.includes("custom")) { szShowFlow("qualify_1"); }
       else if (opt.includes("team")) szSendWA("wants to talk to the team");
+    } else if (step === "qualify_1") {
+      state.category = opt;
+      setTimeout(() => szShowFlow("qualify_2"), 400);
+    } else if (step === "qualify_2") {
+      state.challenge = opt;
+      setTimeout(() => szShowFlow("qualify_3"), 400);
+    } else if (step === "qualify_3") {
+      state.budget = opt;
+      setTimeout(() => szShowFlow("qualify_4"), 400);
+    } else if (step === "qualify_4") {
+      state.timeline = opt;
+      // Now we have full lead info — pass to WhatsApp
+      const summary = `Hi Scalioz Team! 👋\n\nI need a custom tool build:\n\n🏢 Industry: ${state.category}\n🔧 Requirement: ${state.challenge}\n💰 Budget: ${state.budget}\n📅 Timeline: ${state.timeline}\n\nPlease get in touch!`;
+      setTimeout(() => {
+        szAddBot(`Thank you! Here's a summary of your requirement:\n\n🏢 ${state.category}\n🔧 ${state.challenge}\n💰 ${state.budget}\n📅 ${state.timeline}\n\nOur team will review and get back to you within 2 hours. Connecting you now...`);
+        const opts = document.getElementById("sz-opts");
+        opts.innerHTML = "";
+        const b = document.createElement("button");
+        b.className = "sz-opt";
+        b.style.cssText = "background:#25D366;color:white;border:none;font-size:.85rem;padding:10px;";
+        b.textContent = "💬 Send My Requirements on WhatsApp →";
+        b.onclick = () => window.open(`https://wa.me/${WA}?text=${encodeURIComponent(summary)}`, "_blank");
+        opts.appendChild(b);
+      }, 500);
     } else if (step === "browse") {
       if (opt.includes("Healthcare")) szShowFlow("healthcare");
       else if (opt.includes("Real Estate")) szShowFlow("realestate");
@@ -310,18 +351,27 @@
     input.value = "";
     szAddUser(msg);
     document.getElementById("sz-opts").innerHTML = "";
+    const msgL = msg.toLowerCase();
+
+    // Custom tool — start qualification flow
+    if (msgL.includes("custom") || msgL.includes("modify") || msgL.includes("white label") || msgL.includes("brand")) {
+      const t = szTyping();
+      setTimeout(() => { t.remove(); szShowFlow("qualify_1"); }, 600);
+      return;
+    }
+    // Team / contact
+    if (msgL.includes("team") || msgL.includes("contact") || msgL.includes("call") || msgL.includes("speak")) {
+      const t = szTyping();
+      setTimeout(() => { t.remove(); szSendWA(`wants to talk: "${msg}"`); }, 600);
+      return;
+    }
     const t = szTyping();
     setTimeout(() => {
       t.remove();
       const resp = getAIResponse(msg);
       szAddBot(resp);
-      // Show WA option if customisation or team mention
-      if (msg.toLowerCase().includes("custom") || msg.toLowerCase().includes("team") || msg.toLowerCase().includes("contact")) {
-        szSendWA(`asked: "${msg}"`);
-      }
     }, 600);
   };
-
   function szSendWA(reason) {
     const summary = `Hi Scalioz! 👋\nI was chatting with your AI assistant.\nReason: ${reason}\n\nPlease help me!`;
     const opts = document.getElementById("sz-opts");
