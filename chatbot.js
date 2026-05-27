@@ -174,10 +174,6 @@
     #sz-send{background:linear-gradient(135deg,${NAVY},${BLUE});color:white;border:none;border-radius:8px;
       padding:8px 14px;cursor:pointer;font-size:.82rem;font-weight:700;transition:opacity .15s;white-space:nowrap;}
     #sz-send:hover{opacity:.88;}
-    #sz-mode-toggle{display:flex;gap:6px;padding:8px 12px 0;flex-shrink:0;}
-    .sz-mode-btn{flex:1;padding:5px;border-radius:6px;border:1.5px solid #e2e8f0;background:white;
-      font-size:.72rem;font-weight:700;cursor:pointer;color:${NAVY};transition:all .15s;}
-    .sz-mode-btn.active{background:${BLUE};color:white;border-color:${BLUE};}
     #sz-footer{padding:5px 12px 8px;font-size:.67rem;color:#94a3b8;text-align:center;flex-shrink:0;}
   `;
 
@@ -201,14 +197,10 @@
         </div>
         <button id="sz-close" onclick="szToggle()">✕</button>
       </div>
-      <div id="sz-mode-toggle">
-        <button class="sz-mode-btn active" id="sz-btn-guide" onclick="szSetMode('flow')">📋 Guided</button>
-        <button class="sz-mode-btn" id="sz-btn-chat" onclick="szSetMode('ai')">💬 Free Chat</button>
-      </div>
       <div id="sz-msgs"></div>
       <div id="sz-opts"></div>
       <div id="sz-input-row">
-        <input id="sz-input" placeholder="Type your question..." onkeydown="if(event.key==='Enter')szSend()" />
+        <input id="sz-input" placeholder="Or type any question about our tools..." onkeydown="if(event.key==='Enter')szSend()" />
         <button id="sz-send" onclick="szSend()">Send</button>
       </div>
       <div id="sz-footer">Powered by Scalioz AI · <a href="https://wa.me/919043946087" target="_blank" style="color:#1A3CFF;text-decoration:none;">WhatsApp us</a></div>
@@ -224,19 +216,7 @@
     if (chatOpen && msgHistory.length === 0) szShowFlow("start");
   };
 
-  window.szSetMode = function(mode) {
-    chatMode = mode;
-    document.getElementById("sz-btn-guide").classList.toggle("active", mode === "flow");
-    document.getElementById("sz-btn-chat").classList.toggle("active", mode === "ai");
-    if (mode === "ai") {
-      szAddBot("💬 Free Chat mode! Ask me anything about our tools:\n• What does the [tool name] do?\n• What tools do you have for clinics?\n• How much does it cost?\n• Can I get a custom version?");
-      document.getElementById("sz-opts").innerHTML = "";
-    } else {
-      szShowFlow("start");
-    }
-  };
-
-  function szAddBot(text) {
+    function szAddBot(text) {
     const el = document.createElement("div");
     el.className = "sz-bot"; el.textContent = text;
     document.getElementById("sz-msgs").appendChild(el);
@@ -283,7 +263,7 @@
     document.getElementById("sz-opts").innerHTML = "";
 
     if (step === "start") {
-      if (opt.includes("specific tool")) { szAddBot("Sure! Type the tool name or describe what you're looking for and I'll explain everything about it."); chatMode = "ai"; szSetModeUI("ai"); }
+      if (opt.includes("specific tool")) { szAddBot("Sure! Type the tool name or describe what you're looking for and I'll explain everything about it."); }
       else if (opt.includes("industry")) szShowFlow("browse");
       else if (opt.includes("Pricing")) { szAddBot(PRICING_INFO); szShowNextOptions(); }
       else if (opt.includes("custom")) { szAddBot(CUSTOM_INFO); szSendWA("interested in custom tool"); }
@@ -303,12 +283,7 @@
     }
   }
 
-  function szSetModeUI(mode) {
-    chatMode = mode;
-    document.getElementById("sz-btn-guide").classList.toggle("active", mode === "flow");
-    document.getElementById("sz-btn-chat").classList.toggle("active", mode === "ai");
-  }
-
+  
   function szShowNextOptions() {
     const opts = document.getElementById("sz-opts");
     opts.innerHTML = "";
@@ -317,7 +292,7 @@
       b.className = "sz-opt"; b.textContent = o;
       b.onclick = () => {
         opts.innerHTML = "";
-        if (o.includes("another")) { szAddBot("Sure! What would you like to know?"); szSetModeUI("ai"); }
+        if (o.includes("another")) { szAddBot("Sure! What would you like to know?"); }
         else if (o.includes("tools")) {
           const base = (window.location.pathname.includes("/healthcare/") || window.location.pathname.includes("/real-estate/") || window.location.pathname.includes("/construction/") || window.location.pathname.includes("/education/")) ? "../tools.html" : "tools.html";
           window.location.href = base;
