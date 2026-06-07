@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://tools.scalioz.com/sitemap.xml
+Sitemap: https://tools.scalioz.com/sitemap-index.xml
+Crawl-delay: 1
