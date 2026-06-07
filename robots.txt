@@ -1,4 +1,24 @@
 User-agent: *
 Allow: /
+
+# Allow all major crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Disallow admin/system files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.json$
+Disallow: /package*.json
+
+# Sitemap
 Sitemap: https://tools.scalioz.com/sitemap-index.xml
+
+# Crawl-delay for bots
 Crawl-delay: 1
